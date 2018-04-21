@@ -30,6 +30,8 @@ class __TwigTemplate_a6db7f7b6da8726a3eac32f3cea40895468ad2bf493fa40c9baaad19590
 
     public function block_main($context, array $blocks = array())
     {
+        echo " ";
+        ob_start();
         // line 2
         echo "<nav>
     <ul>
@@ -40,13 +42,13 @@ class __TwigTemplate_a6db7f7b6da8726a3eac32f3cea40895468ad2bf493fa40c9baaad19590
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 5
             echo "        <li>
-            <a href=\"/category/";
+            <a href=\"/PvcAlu/category/";
             // line 6
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", array()), "html", null, true);
             echo "\">
                 ";
             // line 7
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()));
+            echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()))), "html", null, true);
             echo "
             </a> ";
         }
@@ -58,6 +60,9 @@ class __TwigTemplate_a6db7f7b6da8726a3eac32f3cea40895468ad2bf493fa40c9baaad19590
     </ul>
 </nav>
 ";
+        echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
+        // line 12
+        echo " ";
     }
 
     public function getTemplateName()
@@ -72,7 +77,7 @@ class __TwigTemplate_a6db7f7b6da8726a3eac32f3cea40895468ad2bf493fa40c9baaad19590
 
     public function getDebugInfo()
     {
-        return array (  57 => 9,  49 => 7,  45 => 6,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
+        return array (  65 => 12,  59 => 9,  51 => 7,  47 => 6,  44 => 5,  40 => 4,  36 => 2,  15 => 1,);
     }
 
     public function getSourceContext()
