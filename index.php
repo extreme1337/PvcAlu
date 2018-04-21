@@ -28,19 +28,29 @@
     $route = $router->find($httpMethod, $url);
     $arguments = $route->extractArguments($url);
 
-    print_r($route);
-    print_r($arguments);
-    exit;
-
-    $controller = new \App\Controllers\MainController($databaseConnection);
-    $controller->home();
+    #print_r($route);
+    #print_r($arguments);
+    #exit;
+    $fullControllerName = '\\App\\Controllers\\' . $route->getControllerName() . 'Controller';
+    $controller = new $fullControllerName($databaseConnection);
+    call_user_func_array([$controller,$route->getMethodName()],$arguments);
+    #$controller->home();
     $data = $controller->getData();
     #print_r($data);
 
-    foreach($data as $name => $value){
-        $$name =$value;
-        #print_r($name);
-    }
 
-    require_once 'views/Main/home.php';
+
+    #foreach($data as $name => $value){
+        #$$name =$value;
+        #print_r($name);
+    #}
+
+    #require_once 'views/'.$route->getControllerName().'/'.$route->getMethodName().'.php';
     
+    $loader = new Twig_Loader_Filesystem("./views");
+    $twig = new Twig_Environment($loader, [
+        "cache"       => "./twig-cache",
+        "auto_reload" => true
+    ]);
+    echo $twig->render($route->getControllerName().'/'.$route->getMethodName().'.html', $data);
+

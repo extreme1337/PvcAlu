@@ -6,17 +6,17 @@ final class Route{
         private $requestMethod;
         private $pattern;
         private $controller;
-        private $methodName;
+        private $method;
 
         private function __construct(
             string $requestMethod,
             string $pattern,
             string $controller,
-            string $methodName) {
+            string $method) {
             $this->requestMethod  = $requestMethod;
             $this->pattern        = $pattern;
             $this->controller = $controller;
-            $this->methodName     = $methodName;
+            $this->method     = $method;
         }
 
         public static function get(string $pattern, string $controller, string $method): Route{
@@ -41,14 +41,14 @@ final class Route{
             return $this->controller;
         }
 
-        public function getMethodrName(): string {
+        public function getMethodName(): string {
             return $this->method;
         }
         public function &extractArguments(string $url): array{
             $matches= [];
             $arguments = [];
 
-            preg_match_all($this->pattern, $url, $arguments);
+            preg_match_all($this->pattern, $url, $matches);
             if(isset($matches[1])){
                 $arguments = $matches[1];
             }

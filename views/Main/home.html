@@ -1,0 +1,12 @@
+{% extends "_global/index.html" %} {% block main %} {% spaceless %}
+<nav>
+    <ul>
+        {% for category in categories %}
+        <li>
+            <a href="/category/{{category.category_id}}">
+                {{category.name|escape|title}}
+            </a> {% endfor %}
+        </li>
+    </ul>
+</nav>
+{% endspaceless %} {% endblock %}
