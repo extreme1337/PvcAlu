@@ -2,18 +2,31 @@
 <html>
 
 <head>
-    <title>Pvc Alu stolarija</title>
+    <title>Pvc Alu stolarija - {% block naslov %}Pocetna{% endblock %}</title>
     <meta charset="utf-8">
 </head>
 
 <body>
     <header>
-        Zaglavlje...
+        <div class="banners">
+            <a href="/PvcAlu/" class="banner">
+                <img src="/assets/img/banner-1.jpg" alt="Banner-1">
+            </a>
+        </div>
+        <nav id="main-menu">
+            <ul>
+                <li><a href="/PvcAlu">Pocetna</a>
+                    <li><a href="PvcAlu/categories">Kategorije</a>
+                        <li><a href="PvcAlu/profile">Profil</a>
+                            <li><a href="PvcAlu/contact">Kontakt</a>
+                                <li><a href="PvcAlu/log-out">Odjava</a>
+            </ul>
+        </nav>
     </header>
     <main>
         {% block main %} {% endblock %}
     </main>
-    <footer> &copy; 2018 Marko Milan</footer>
+    <footer> &copy; 2018 - Pvc Alu prodavnica Milan&amp;Marko</footer>
 </body>
 
 </html>

@@ -2,6 +2,11 @@
 <h1>
     {{category.name|escape}}
 </h1>
-<p>ID broj ove kategorije je: {{category.category_id}}
-</p>
-{% endblock %}
+<p>Spisak profila u ovoj kategoriji je: </p>
+<ul>{% for profile in profileInCategory %}
+    <li>
+        <a href="/PvcAlu/profile/{{ profile.profile_id}}">
+                {{ profile.name|escape }}<br>
+            </a> {{ profile.description|escape }} {% endfor %}
+</ul>
+{% endblock %} {% block naslov %} {{category.name|escape}} {% endblock %}

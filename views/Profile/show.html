@@ -1,0 +1,7 @@
+{% extends "_global/index.html" %} {% block main %}
+<h1>
+    {{profile.name|escape}}
+</h1>
+<p>{{ profile.description }} </p>
+<p>Cena po povrsini {{ profile.price_per_unit_area }} </p>
+{% endblock %} {% block naslov %} {{profile.name|escape}} {% endblock %}
