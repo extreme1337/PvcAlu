@@ -42,19 +42,38 @@ class __TwigTemplate_434838722bd9aaead6a86a9539effc512a288434396f9ea2109db4c2563
         </div>
         <nav id=\"main-menu\">
             <ul>
-                <li><a href=\"/PvcAlu\">Pocetna</a>
-                    <li><a href=\"PvcAlu/categories\">Kategorije</a>
-                        <li><a href=\"PvcAlu/profile\">Profil</a>
-                            <li><a href=\"PvcAlu/contact\">Kontakt</a>
+                <li><a href=\"/PvcAlu\">Pocetna</a>";
+        // line 18
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+            // line 19
+            echo "                    <li>
+                        <a href=\"/PvcAlu/category/";
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", array()), "html", null, true);
+            echo "\">
+                            ";
+            // line 21
+            echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()))), "html", null, true);
+            echo "
+                        </a> ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 23
+        echo "                        <li><a href=\"PvcAlu/contact\">Kontakt</a>
+                            <li><a href=\"PvcAlu/infos\">O nama</a>
                                 <li><a href=\"PvcAlu/log-out\">Odjava</a>
             </ul>
         </nav>
     </header>
     <main>
         ";
-        // line 27
+        // line 30
         $this->displayBlock('main', $context, $blocks);
-        // line 28
+        // line 31
         echo "    </main>
     <footer> &copy; 2018 - Pvc Alu prodavnica Milan&amp;Marko</footer>
 </body>
@@ -68,7 +87,7 @@ class __TwigTemplate_434838722bd9aaead6a86a9539effc512a288434396f9ea2109db4c2563
         echo "Pocetna";
     }
 
-    // line 27
+    // line 30
     public function block_main($context, array $blocks = array())
     {
         echo " ";
@@ -79,9 +98,14 @@ class __TwigTemplate_434838722bd9aaead6a86a9539effc512a288434396f9ea2109db4c2563
         return "_global/index.html";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  72 => 27,  66 => 5,  58 => 28,  56 => 27,  31 => 5,  25 => 1,);
+        return array (  91 => 30,  85 => 5,  77 => 31,  75 => 30,  66 => 23,  58 => 21,  54 => 20,  51 => 19,  47 => 18,  31 => 5,  25 => 1,);
     }
 
     public function getSourceContext()
