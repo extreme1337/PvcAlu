@@ -38,18 +38,33 @@ class __TwigTemplate_1791825d80ee271f38ccf04d840cc26a41f5036e967749a19d4732c244e
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "name", array()));
         echo "
 </h1>
-<p>";
-        // line 5
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "description", array()), "html", null, true);
-        echo " </p>
-<p>Cena po povrsini ";
+<p>Spisak modela napravljenih od ovog profila: </p>
+<ul>";
         // line 6
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "price_per_unit_area", array()), "html", null, true);
-        echo " </p>
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["modelInProfile"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["model"]) {
+            // line 7
+            echo "    <li>
+        <a href=\"/PvcAlu/profile/model/";
+            // line 8
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "model_id", array()), "html", null, true);
+            echo "\">
+                ";
+            // line 9
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "name", array()));
+            echo "<br>
+            </a> ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['model'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 11
+        echo "</ul>
 ";
     }
 
-    // line 7
+    // line 12
     public function block_naslov($context, array $blocks = array())
     {
         echo " ";
@@ -69,7 +84,7 @@ class __TwigTemplate_1791825d80ee271f38ccf04d840cc26a41f5036e967749a19d4732c244e
 
     public function getDebugInfo()
     {
-        return array (  53 => 7,  47 => 6,  43 => 5,  38 => 3,  35 => 2,  15 => 1,);
+        return array (  68 => 12,  63 => 11,  55 => 9,  51 => 8,  48 => 7,  44 => 6,  38 => 3,  35 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

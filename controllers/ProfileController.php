@@ -14,5 +14,8 @@ class ProfileController extends \App\core\Controller{
 
         $this->set('profile',$profile);
 
+        $modelModel = new \App\models\ModelModel($this->getDatabaseConnection());
+        $modelInProfile = $modelModel->getByProfileId($id);
+        $this->set('modelInProfile',$modelInProfile);
 }
 }

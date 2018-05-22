@@ -1,7 +1,7 @@
 <?php
     require_once 'vendor/autoload.php';
     require_once 'Configuration.php';
-
+    #session_start();
 
     use App\Core\DatabaseConfiguration;
     use App\Core\DatabaseConnection;
