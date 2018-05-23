@@ -74,7 +74,7 @@
         }
 
         final public function getAllByFieldName(string $fieldName, $value): array {
-            if ($this->isFieldValueValid($fieldName, $value)) {
+            if (!$this->isFieldValueValid($fieldName, $value)) {
                 throw new \Exception('Invalid field name or value: ' . $fieldName);
             }
 

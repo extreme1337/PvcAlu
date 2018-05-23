@@ -57,4 +57,37 @@ final class Field{
     public static function readOnlyMaxDecimal(int $length,int $decimals): Field{
         return new Field('|^\-?[1-9][0-9]{0,'.($length-1).'}\.[0-9]{0,'.$decimals.'}$|',false);
     }
+
+    public static function editableDateTime(): Field{
+        return new Field('|[0-9]{4}\-[0-9]{2}\-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}|',true);
+    }
+
+    public static function readOnlyDateTime(): Field{
+        return new Field('|[0-9]{4}\-[0-9]{2}\-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}|',false);
+    }
+
+    public static function editableDate(): Field{
+        return new Field('|[0-9]{4}\-[0-9]{2}\-[0-9]{2}|',true);
+    }
+
+    public static function readOnlyDate(): Field{
+        return new Field('|[0-9]{4}\-[0-9]{2}\-[0-9]{2}|',false);
+    }
+
+    public static function editableTime(): Field{
+        return new Field('|[0-9]{2}:[0-9]{2}:[0-9]{2}|',true);
+    }
+
+    public static function readOnlyTime(): Field{
+        return new Field('|[0-9]{2}:[0-9]{2}:[0-9]{2}|',false);
+    }
+
+    public static function editableBit(): Field{
+        return new Field('|[01]$|',true);
+    }
+
+    public static function readOnlyBit(): Field{
+        return new Field('|[01]$|',false);
+    }
+
 }
