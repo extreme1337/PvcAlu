@@ -2,7 +2,6 @@
 
 namespace App\controllers;
 
-class Cart
-{
+class CartController{
     
 }

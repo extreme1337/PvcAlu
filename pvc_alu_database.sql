@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `administrator`;
 CREATE TABLE `administrator`  (
   `administrator_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `email` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `password` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `password` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`administrator_id`) USING BTREE,
   UNIQUE INDEX `uq_administrator_email`(`email`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
@@ -42,9 +42,9 @@ INSERT INTO `administrator` VALUES (4, 'marko.miseljic.14@gmail.com', '321321');
 -- ----------------------------
 DROP TABLE IF EXISTS `cart`;
 CREATE TABLE `cart`  (
-  `cart_id` int(22) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `created_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `session_number` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `session_number` varchar(32) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`cart_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
@@ -55,7 +55,7 @@ DROP TABLE IF EXISTS `cart_model`;
 CREATE TABLE `cart_model`  (
   `cart_model_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `added_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `model_price` decimal(64, 2) UNSIGNED NOT NULL,
+  `model_price` decimal(10, 2) UNSIGNED NOT NULL,
   `cart_id` int(11) UNSIGNED NOT NULL,
   `model_id` int(11) UNSIGNED NOT NULL,
   PRIMARY KEY (`cart_model_id`) USING BTREE,
@@ -111,12 +111,12 @@ INSERT INTO `manufacturer` VALUES (6, 'MR PVC SISTEM ', 1);
 -- ----------------------------
 DROP TABLE IF EXISTS `model`;
 CREATE TABLE `model`  (
-  `model_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `model_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `min_width` double(64, 2) NOT NULL,
-  `max_width` double(64, 2) NOT NULL,
-  `min_height` double(64, 2) NOT NULL,
-  `max_height` double(64, 2) NOT NULL,
+  `min_width` decimal(10, 2) NOT NULL,
+  `max_width` decimal(10, 2) NOT NULL,
+  `min_height` decimal(10, 2) NOT NULL,
+  `max_height` decimal(10, 2) NOT NULL,
   `administrator_id` int(11) UNSIGNED NOT NULL,
   `profile_id` int(11) UNSIGNED NOT NULL,
   PRIMARY KEY (`model_id`) USING BTREE,
@@ -159,7 +159,7 @@ CREATE TABLE `profile`  (
   `name` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `picture` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `description` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `price_per_unit_area` decimal(64, 2) UNSIGNED NOT NULL,
+  `price_per_unit_area` decimal(10, 2) UNSIGNED NOT NULL,
   `administrator_id` int(11) UNSIGNED NOT NULL,
   `category_id` int(11) UNSIGNED NOT NULL,
   `manufacturer_id` int(11) UNSIGNED NOT NULL,

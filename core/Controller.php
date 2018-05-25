@@ -4,10 +4,19 @@ namespace App\core;
 
 class Controller{
     private $dbc;
+    private $session;
     private $data = [];
 
-    final public function __construct(\App\Core\DatabaseConnection &$dbc){
+    final public function __construct(\App\core\DatabaseConnection &$dbc){
         $this->dbc=$dbc;
+    }
+
+    final public function &getSession():\App\core\Session\Session{
+        return $this->session;
+    }
+
+    final public function setSession(\App\core\Session\Session &$session){
+        $this->session = $session;
     }
 
     final public function &getDatabaseConnection(): \App\Core\DatabaseConnection{

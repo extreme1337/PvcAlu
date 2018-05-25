@@ -34,7 +34,7 @@ class __TwigTemplate_434838722bd9aaead6a86a9539effc512a288434396f9ea2109db4c2563
 </head>
 
 <body>
-    <header>
+    <div class=\"container\">
         <div class=\"banners\">
             <a href=\"/PvcAlu/\" class=\"banner\">
                 <img src=\"/assets/img/banner-1.jpg\" alt=\"Banner-1\">
@@ -78,7 +78,7 @@ class __TwigTemplate_434838722bd9aaead6a86a9539effc512a288434396f9ea2109db4c2563
                                 <li><a href=\"PvcAlu/log-out\">Odjava</a>
             </ul>
         </nav>
-    </header>
+    </div>
     <main>
         ";
         // line 37
