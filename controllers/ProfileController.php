@@ -8,7 +8,7 @@ class ProfileController extends \App\core\Controller{
         $profile = $profileModel->getById($id);
 
         if(!$profile){
-            header('Location: /PvcAlu/');
+            header('Location: {{BASE}}');
             exit;
         }
 

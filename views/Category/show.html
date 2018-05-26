@@ -5,7 +5,7 @@
 <p>Spisak profila u ovoj kategoriji je: </p>
 <ul>{% for profile in profileInCategory %}
     <li>
-        <a href="/PvcAlu/profile/{{ profile.profile_id}}">
+        <a href="{{BASE}}profile/{{ profile.profile_id}}">
                 {{ profile.name|escape }}<br>
             </a> {{ profile.description|escape }} {% endfor %}
 </ul>

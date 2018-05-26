@@ -8,7 +8,7 @@ class ModelController extends \App\core\Controller{
         $model = $modelModel->getById($id);
 
         if(!$model){
-            header('Location: /PvcAlu/');
+            header('Location: {{BASE}}');
             exit;
         }
 

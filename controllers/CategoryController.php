@@ -7,7 +7,7 @@ class CategoryController extends \App\core\Controller{
         $categoryModel = new \App\models\CategoryModel($this->getDatabaseConnection());
         $category = $categoryModel->getById($id);
         if(!$category){
-            header('Location: /PvcAlu/');
+            header('Location: {{BASE}}');
             exit;
         }
         $this->set('category',$category);

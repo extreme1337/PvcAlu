@@ -41,9 +41,11 @@ class __TwigTemplate_434838722bd9aaead6a86a9539effc512a288434396f9ea2109db4c2563
             </a>
         </div>
         <div class=\"top-right-side\">
-            <button type=\"button\">Login</button>
+            <form action=\"/PvcAlu/user/login/\" method=\"get\">
+                <button type=\"submit\">Login</button>
+            </form>
             <a href=\"/PvcAlu/cart/";
-        // line 18
+        // line 20
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["cart_model"] ?? null), "cart_model_id", array()), "html", null, true);
         echo "\">
                 <img src=\"/assets/img/cart.jpg\" alt=\"korpa\">
@@ -53,18 +55,18 @@ class __TwigTemplate_434838722bd9aaead6a86a9539effc512a288434396f9ea2109db4c2563
         <nav id=\"main-menu\">
             <ul>
                 <li><a href=\"/PvcAlu\">Pocetna</a>";
-        // line 25
+        // line 27
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 26
+            // line 28
             echo "                    <li>
                         <a href=\"/PvcAlu/category/";
-            // line 27
+            // line 29
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", array()), "html", null, true);
             echo "\">
                             ";
-            // line 28
+            // line 30
             echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()))), "html", null, true);
             echo "
                         </a> ";
@@ -72,7 +74,7 @@ class __TwigTemplate_434838722bd9aaead6a86a9539effc512a288434396f9ea2109db4c2563
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 32
         echo "                        <li><a href=\"PvcAlu/contact\">Kontakt</a>
                             <li><a href=\"PvcAlu/infos\">O nama</a>
                                 <li><a href=\"PvcAlu/log-out\">Odjava</a>
@@ -81,9 +83,9 @@ class __TwigTemplate_434838722bd9aaead6a86a9539effc512a288434396f9ea2109db4c2563
     </div>
     <main>
         ";
-        // line 37
+        // line 39
         $this->displayBlock('main', $context, $blocks);
-        // line 38
+        // line 40
         echo "    </main>
     <footer> &copy; 2018 - Pvc Alu prodavnica Milan&amp;Marko</footer>
 </body>
@@ -97,7 +99,7 @@ class __TwigTemplate_434838722bd9aaead6a86a9539effc512a288434396f9ea2109db4c2563
         echo "Pocetna";
     }
 
-    // line 37
+    // line 39
     public function block_main($context, array $blocks = array())
     {
         echo " ";
@@ -115,7 +117,7 @@ class __TwigTemplate_434838722bd9aaead6a86a9539effc512a288434396f9ea2109db4c2563
 
     public function getDebugInfo()
     {
-        return array (  101 => 37,  95 => 5,  87 => 38,  85 => 37,  76 => 30,  68 => 28,  64 => 27,  61 => 26,  57 => 25,  47 => 18,  31 => 5,  25 => 1,);
+        return array (  103 => 39,  97 => 5,  89 => 40,  87 => 39,  78 => 32,  70 => 30,  66 => 29,  63 => 28,  59 => 27,  49 => 20,  31 => 5,  25 => 1,);
     }
 
     public function getSourceContext()
