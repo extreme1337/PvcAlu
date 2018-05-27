@@ -1,0 +1,21 @@
+{% extends "_global/index.html" %} {% block main %}
+<div>
+    <div class="options">
+        <a href="{{ BASE }}user/manufacturers">Prikazi sve proizvodjace &nbsp;&nbsp;&nbsp;</a>
+        <a href="{{ BASE }}user/manufacturers/add">Dodaj novog proizvodjaca</a>
+    </div>
+
+    <form class="manufacturer-form" method="POST">
+        <div>
+            <label for="name">Naziv: </label>
+            <input type="text" id="name" name="name" value="{{ manufacturer.name|escape }}">
+        </div>
+
+        <div>
+            <button type="submit">
+                Izmeni proizvodjaca
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -46,8 +46,10 @@ class __TwigTemplate_2ed7326df0cb6b7aa2f535c97a24cdee5cd145c461247f5797141afa85f
         foreach ($context['_seq'] as $context["_key"] => $context["model"]) {
             // line 7
             echo "    <li>
-        <a href=\"/PvcAlu/profile/model/";
+        <a href=\"";
             // line 8
+            echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+            echo "profile/model/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "model_id", array()), "html", null, true);
             echo "\">
                 ";
@@ -84,7 +86,7 @@ class __TwigTemplate_2ed7326df0cb6b7aa2f535c97a24cdee5cd145c461247f5797141afa85f
 
     public function getDebugInfo()
     {
-        return array (  68 => 12,  63 => 11,  55 => 9,  51 => 8,  48 => 7,  44 => 6,  38 => 3,  35 => 2,  15 => 1,);
+        return array (  70 => 12,  65 => 11,  57 => 9,  51 => 8,  48 => 7,  44 => 6,  38 => 3,  35 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

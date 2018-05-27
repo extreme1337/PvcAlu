@@ -37,7 +37,10 @@ class __TwigTemplate_a0b40018f9ba0a675cdc772a3b38fb81456a2545f32dace8f0a15d88372
         echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
         echo "</p>
 
-    <p>Klikni <a href=\"/PvcAlu/user/login\">ovde</a> da se vratiš nazad.</p>
+    <p>Klikni <a href=\"";
+        // line 5
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/login\">ovde</a> da se vratiš nazad.</p>
 </div>
 ";
     }
@@ -54,7 +57,7 @@ class __TwigTemplate_a0b40018f9ba0a675cdc772a3b38fb81456a2545f32dace8f0a15d88372
 
     public function getDebugInfo()
     {
-        return array (  37 => 3,  34 => 2,  15 => 1,);
+        return array (  42 => 5,  37 => 3,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

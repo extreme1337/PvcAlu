@@ -34,11 +34,26 @@ class __TwigTemplate_048917646d7773ec220bf39ea30bbb297c73f72b5144b46c640704a2a3d
         ob_start();
         // line 2
         echo "<div>
-    Dashboard
+    <a href=\"";
+        // line 3
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/categories\">Uredjivanje kategorija<br></a>
+    <a href=\"";
+        // line 4
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/manufacturers\">Uredjivanje proizvodjaca<br></a>
+    <a href=\"";
+        // line 5
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/profiles\">Uredjivanje profila<br></a>
+    <a href=\"";
+        // line 6
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/models\">Uredjivanje modela<br></a>
 </div>
 ";
         echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
-        // line 5
+        // line 8
         echo " ";
     }
 
@@ -54,7 +69,7 @@ class __TwigTemplate_048917646d7773ec220bf39ea30bbb297c73f72b5144b46c640704a2a3d
 
     public function getDebugInfo()
     {
-        return array (  42 => 5,  36 => 2,  15 => 1,);
+        return array (  57 => 8,  51 => 6,  47 => 5,  43 => 4,  39 => 3,  36 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

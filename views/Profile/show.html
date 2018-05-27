@@ -5,7 +5,7 @@
 <p>Spisak modela napravljenih od ovog profila: </p>
 <ul>{% for model in modelInProfile %}
     <li>
-        <a href="/PvcAlu/profile/model/{{ model.model_id}}">
+        <a href="{{BASE}}profile/model/{{ model.model_id}}">
                 {{ model.name|escape }}<br>
             </a> {% endfor %}
 </ul>

@@ -9,29 +9,29 @@
 <body>
     <div class="container">
         <div class="banners">
-            <a href="/PvcAlu/" class="banner">
-                <img src="/assets/img/banner-1.jpg" alt="Banner-1">
+            <a href="{{BASE}}" class="banner">
+                <img src="{{BASE}}assets/img/banner-1.jpg" alt="Banner-1">
             </a>
         </div>
         <div class="top-right-side">
-            <form action="/PvcAlu/user/login/" method="get">
+            <form action="{{BASE}}user/login/" method="get">
                 <button type="submit">Login</button>
             </form>
-            <a href="/PvcAlu/cart/{{cart_model.cart_model_id}}">
-                <img src="/assets/img/cart.jpg" alt="korpa">
+            <a href="{{BASE}}cart/{{cart_model.cart_model_id}}">
+                <img src="{{BASE}}assets/img/cart.jpg" alt="korpa">
 
             </a>
         </div>
         <nav id="main-menu">
             <ul>
-                <li><a href="/PvcAlu">Pocetna</a>{% for category in categories %}
+                <li><a href="{{BASE}}">Pocetna</a>{% for category in categories %}
                     <li>
-                        <a href="/PvcAlu/category/{{category.category_id}}">
+                        <a href="{{BASE}}category/{{category.category_id}}">
                             {{category.name|escape|title}}
                         </a> {% endfor %}
-                        <li><a href="PvcAlu/contact">Kontakt</a>
-                            <li><a href="PvcAlu/infos">O nama</a>
-                                <li><a href="PvcAlu/log-out">Odjava</a>
+                        <li><a href="{{BASE}}contact">Kontakt</a>
+                            <li><a href="{{BASE}}infos">O nama</a>
+                                <li><a href="{{BASE}}log-out">Odjava</a>
             </ul>
         </nav>
     </div>

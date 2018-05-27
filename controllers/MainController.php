@@ -51,6 +51,6 @@ class MainController extends \App\Core\Controller {
         $this->getSession()->put('administrator_id',$admin->administrator_id);
         $this->getSession()->save();
 
-        $this->redirect('{{BASE}}user/profile');
+        $this->redirect(\Configuration::BASE . 'user/profile');
     }
 }

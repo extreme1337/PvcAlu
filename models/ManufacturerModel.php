@@ -11,7 +11,7 @@ class ManufacturerModel extends \App\Core\Model {
 
             'name'              => \App\core\Field::editableString(64),
             
-            'administrator_id'  => \App\core\Field::readOnlyInteger(11)
+            'administrator_id'  => \App\core\Field::editableInteger(11)
             ];
     }
 

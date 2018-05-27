@@ -1,5 +1,5 @@
 {% extends "_global/index.html" %} {% block main %}
-<form action="/PvcAlu/user/login" method="POST">
+<form action="{{BASE}}user/login" method="POST">
     <div>
         <label for="email">Email:</label>
         <input type="text" id="email" name="email" required placeholder="Unesite svoj email.">
