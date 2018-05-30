@@ -2,4 +2,12 @@
 <h1>
     {{model.name|escape}}
 </h1>
+<div>
+    <img src="{{BASE}}{{model.picture}}" alt="{{model.name}}">
+</div>
+<div>
+    <form action="{{BASE}}model/add/">
+        <button type="submit">Dodaj u korpu</button>
+    </form>
+</div>
 {% endblock %} {% block naslov %} {{model.name|escape}} {% endblock %}

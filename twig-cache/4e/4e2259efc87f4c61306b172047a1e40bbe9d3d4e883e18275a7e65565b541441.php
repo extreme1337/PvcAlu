@@ -56,20 +56,30 @@ class __TwigTemplate_770403e8ab37cfb7da7a9e5c4040ac639ead51971572302c48f9e5e4b40
             // line 9
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["profile"], "name", array()));
             echo "<br>
-            </a> ";
+            </a><img src=\"";
             // line 10
+            echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["profile"], "picture", array()), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["profile"], "name", array()), "html", null, true);
+            echo "\"><br>
+        <p> ";
+            // line 11
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["profile"], "description", array()));
-            echo " ";
+            echo "</p><br>
+        <p>Cena po povrsini profila: ";
+            // line 12
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["profile"], "price_per_unit_area", array()), "html", null, true);
+            echo "</p>
+        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['profile'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 11
-        echo "</ul>
-";
+        // line 13
+        echo " </ul> ";
     }
 
-    // line 12
     public function block_naslov($context, array $blocks = array())
     {
         echo " ";
@@ -89,7 +99,7 @@ class __TwigTemplate_770403e8ab37cfb7da7a9e5c4040ac639ead51971572302c48f9e5e4b40
 
     public function getDebugInfo()
     {
-        return array (  73 => 12,  68 => 11,  61 => 10,  57 => 9,  51 => 8,  48 => 7,  44 => 6,  38 => 3,  35 => 2,  15 => 1,);
+        return array (  80 => 13,  72 => 12,  68 => 11,  61 => 10,  57 => 9,  51 => 8,  48 => 7,  44 => 6,  38 => 3,  35 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

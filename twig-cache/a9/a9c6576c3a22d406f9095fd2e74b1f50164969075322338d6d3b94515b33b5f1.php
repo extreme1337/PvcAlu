@@ -38,10 +38,27 @@ class __TwigTemplate_3b8ee3c6fc0a66fe49775bca72fa5d6d39a109d1069e2726d592abdaee2
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "name", array()));
         echo "
 </h1>
+<div>
+    <img src=\"";
+        // line 6
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "picture", array()), "html", null, true);
+        echo "\" alt=\"";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "name", array()), "html", null, true);
+        echo "\">
+</div>
+<div>
+    <form action=\"";
+        // line 9
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "model/add/\">
+        <button type=\"submit\">Dodaj u korpu</button>
+    </form>
+</div>
 ";
     }
 
-    // line 5
+    // line 13
     public function block_naslov($context, array $blocks = array())
     {
         echo " ";
@@ -61,7 +78,7 @@ class __TwigTemplate_3b8ee3c6fc0a66fe49775bca72fa5d6d39a109d1069e2726d592abdaee2
 
     public function getDebugInfo()
     {
-        return array (  45 => 5,  38 => 3,  35 => 2,  15 => 1,);
+        return array (  62 => 13,  53 => 9,  44 => 6,  38 => 3,  35 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

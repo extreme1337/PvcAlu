@@ -52,18 +52,28 @@ class __TwigTemplate_a6db7f7b6da8726a3eac32f3cea40895468ad2bf493fa40c9baaad19590
             // line 7
             echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()))), "html", null, true);
             echo "
-            </a> ";
+            </a>
+            <img src=\"";
+            // line 9
+            echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "picture", array()), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()), "html", null, true);
+            echo "\">
+            <p>";
+            // line 10
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "description", array()), "html", null, true);
+            echo "</p> ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 9
-        echo "        </li>
+        echo " </li>
     </ul>
 </nav>
 ";
         echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
-        // line 12
+        // line 13
         echo " ";
     }
 
@@ -79,7 +89,7 @@ class __TwigTemplate_a6db7f7b6da8726a3eac32f3cea40895468ad2bf493fa40c9baaad19590
 
     public function getDebugInfo()
     {
-        return array (  67 => 12,  61 => 9,  53 => 7,  47 => 6,  44 => 5,  40 => 4,  36 => 2,  15 => 1,);
+        return array (  77 => 13,  65 => 10,  58 => 9,  53 => 7,  47 => 6,  44 => 5,  40 => 4,  36 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

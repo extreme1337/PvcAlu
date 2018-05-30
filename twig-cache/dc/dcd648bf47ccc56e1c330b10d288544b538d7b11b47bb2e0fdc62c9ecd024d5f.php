@@ -62,7 +62,7 @@ class __TwigTemplate_434838722bd9aaead6a86a9539effc512a288434396f9ea2109db4c2563
                 <img src=\"";
         // line 21
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "assets/img/cart.jpg\" alt=\"korpa\">
+        echo "assets/images/cart.jpg\" alt=\"korpa\">
 
             </a>
         </div>

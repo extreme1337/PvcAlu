@@ -4,6 +4,7 @@
 <head>
     <title>Pvc Alu stolarija - {% block naslov %}Pocetna{% endblock %}</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="{{BASE}}assets/libs/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -18,7 +19,7 @@
                 <button type="submit">Login</button>
             </form>
             <a href="{{BASE}}cart/{{cart_model.cart_model_id}}">
-                <img src="{{BASE}}assets/img/cart.jpg" alt="korpa">
+                <img src="{{BASE}}assets/images/cart.jpg" alt="korpa">
 
             </a>
         </div>
@@ -40,5 +41,7 @@
     </main>
     <footer> &copy; 2018 - Pvc Alu prodavnica Milan&amp;Marko</footer>
 </body>
+<script src="{{BASE}}assets/libs/jquery/dist/jquery.min.js" />
+<script src="{{BASE}}assets/libs/bootstrap/dist/js/bootstrap.min.js" />
 
 </html>

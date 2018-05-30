@@ -89,6 +89,27 @@
             return $items;
         }
 
+        final public function innerTwoTables(string $firstTableName,string $secondTableName, string $fieldName){
+
+            $sql = 'SELECT '.$secondTableName.'.'.$fieldName.' FROM '.$secondTableName.' INNER JOIN '
+                            .$firstTableName.' ON '.$secondTableName.'.'.$secondTableName.
+                            '_id='.$firstTableName.'.'.$firstTableName.'_id;';
+            $prep = $this->dbc->getDatabaseConnection()->prepare($sql);
+            $res = $prep->execute();
+            $items= [];
+            if($res){
+                $items = fetchAll(\PDO::FETCH_OBJ);
+            }
+            return $items;
+        }
+
+        final public function innerTreeTables(){
+
+        }
+        final public function innerFourTables(){
+            
+        }
+
         final private function checkFieldList(array $data){
             $fields = $this->getFields();
 

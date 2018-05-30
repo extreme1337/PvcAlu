@@ -7,6 +7,7 @@
     <li>
         <a href="{{BASE}}profile/{{ profile.profile_id}}">
                 {{ profile.name|escape }}<br>
-            </a> {{ profile.description|escape }} {% endfor %}
-</ul>
-{% endblock %} {% block naslov %} {{category.name|escape}} {% endblock %}
+            </a><img src="{{BASE}}{{profile.picture}}" alt="{{profile.name}}"><br>
+        <p> {{ profile.description|escape }}</p><br>
+        <p>Cena po povrsini profila: {{profile.price_per_unit_area}}</p>
+        {% endfor %} </ul> {% endblock %} {% block naslov %} {{category.name|escape}} {% endblock %}

@@ -1,0 +1,26 @@
+{% extends "_global/index.html" %} {% block main %}
+<div>
+    <p>Proizvodi koje zelite da narucite:</p>
+    {{order.order_id}}
+</div>
+<div>
+    <form method="post">
+        <div>
+            <label for="forename">Unesite ime: </label><br>
+            <input type="text" id="forename" name="forename" required placeholder="Unesite ime.">
+        </div>
+        <div>
+            <label for="surename">Unesite prezime: </label><br>
+            <input type="text" id="surename" name="surename" required placeholder="Unesite prezime.">
+        </div>
+        <div>
+            <label for="residential_address">Unesite adresu na koju da Vam isporucimo proizvode: </label><br>
+            <input type="text" id="residential_address" name="residential_address" required placeholder="Unesite adresu.">
+        </div>
+        <div>
+            <button type="submit">Naruci proizvode</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}

@@ -4,7 +4,7 @@ namespace App\controllers;
 
 class CartController extends \App\core\Controller{
 
-    public function show($id = 1){
+    public function show($id){
         $modelModel = new \App\models\ModelModel($this->getDatabaseConnection());
         $model = $modelModel->getById($id);
 
@@ -26,34 +26,10 @@ class CartController extends \App\core\Controller{
             ]
             );
     }
-    public function getCart() {
-        $carts = $this->getSession()->get('cart', []);
-        $this->set('cart', $carts);
-    }
 
-    public function addCart($modelId) {
-        $modelModel = new \App\Models\ModelModel($this->getDatabaseConnection());
-        $model = $modelModel->getById($modelId);
+    public function orderFromCart(){}
 
-        if (!$model) {
-            $this->set('error', -1);
-            return;
-        }
-
-        $carts = $this->getSession()->get('cart', []);
-
-        foreach ($carts as $cart) {
-            if ($cart->model_id == $modelId) {
-                $this->set('error', -2);
-                return;
-            }
-        }
-
-        $carts[] = $model;
-        $this->getSession()->put('cart', $carts);
-
-        $this->set('error', 0);
-    }
+    
 
 
 }

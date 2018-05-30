@@ -1,0 +1,26 @@
+{% extends "_global/index.html" %} {% block main %}
+<div>
+    <p>
+        Odabrali ste model: {{model.name}}
+    </p><br>
+    <p>
+        Unesite dimenzija za taj model:
+    </p><br>
+</div>
+<div>
+    <form method="post">
+        <div>
+            <label for="width">Unesite sirinu koju zelite: </label><br>
+            <input type="text" id="width" name="width" required placeholder="Unesite sirinu.">
+        </div>
+        <div>
+            <label for="height">Unesite visinu koju zelite: </label><br>
+            <input type="text" id="height" name="height" required placeholder="Unesite visinu.">
+        </div>
+        <div>
+            <button type="submit">Dodajte model u korpu</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}

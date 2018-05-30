@@ -5,8 +5,9 @@
         <li>
             <a href="{{BASE}}category/{{category.category_id}}">
                 {{category.name|escape|title}}
-            </a> {% endfor %}
-        </li>
+            </a>
+            <img src="{{BASE}}{{category.picture}}" alt="{{category.name}}">
+            <p>{{category.description}}</p> {% endfor %} </li>
     </ul>
 </nav>
 {% endspaceless %} {% endblock %}
