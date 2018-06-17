@@ -1,12 +1,20 @@
 {% extends "_global/index.html" %} {% block main %}
-<h1>
-    {{profile.name|escape}}
-</h1>
-<p>Spisak modela napravljenih od ovog profila: </p>
-<ul>{% for model in modelInProfile %}
-    <li>
-        <a href="{{BASE}}profile/model/{{ model.model_id}}">
-                {{ model.name|escape }}<br>
-            </a> {% endfor %}
-</ul>
+<div class="container">
+    <h1 class="text-center">
+        {{profile.name|escape}}
+    </h1>
+    <p class="text-center">Spisak modela napravljenih od ovog profila: </p>
+    <div class="row">
+
+        {% for model in modelInProfile %}
+        <div class="card col-12 col-sm-12 col-md-6 text-center">
+            <h3>{{ model.name|escape }}</h3>
+            <a href="{{BASE}}profile/model/{{ model.model_id}}">
+                <br>
+                <img src="{{BASE}}{{model.picture}}" alt="{{model.name}}">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %} {% block naslov %} {{profile.name|escape}} {% endblock %}

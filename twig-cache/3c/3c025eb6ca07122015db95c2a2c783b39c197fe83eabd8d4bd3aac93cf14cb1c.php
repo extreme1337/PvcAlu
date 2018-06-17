@@ -31,33 +31,55 @@ class __TwigTemplate_669b20e8dbb6c2c8b88ea583deb7c482e69c33417f5fd35ca44264c3787
     public function block_main($context, array $blocks = array())
     {
         // line 2
-        echo "<div>
-    <p>
-        Odabrali ste model: ";
-        // line 4
+        echo "<div class=\"container\">
+    <div class=\"row\">
+        <form method=\"post\" class=\"col col-md-8 offset-md-2 card\">
+            <div class=\"card-header \">
+                <h3 class=\"text-center\">Odabrali ste model: ";
+        // line 6
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "name", array()), "html", null, true);
-        echo "
-    </p><br>
-    <p>
-        Unesite dimenzija za taj model:
-    </p><br>
-</div>
-<div>
-    <form method=\"post\">
-        <div>
-            <label for=\"width\">Unesite sirinu koju zelite: </label><br>
-            <input type=\"text\" id=\"width\" name=\"width\" required placeholder=\"Unesite sirinu.\">
-        </div>
-        <div>
-            <label for=\"height\">Unesite visinu koju zelite: </label><br>
-            <input type=\"text\" id=\"height\" name=\"height\" required placeholder=\"Unesite visinu.\">
-        </div>
-        <div>
-            <button type=\"submit\">Dodajte model u korpu</button>
-        </div>
+        echo "</h3>
 
-    </form>
+            </div>
+            <div class=\"card-body\">
+                <h4 class=\"text-center\">Unesite dimenzija za taj model:</h4><br>
+                <!--<h5 class=\"text-center\">Sirina mora da bude u okviru ";
+        // line 11
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "min_width", array()), "html", null, true);
+        echo " cm i ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "max_width", array()), "html", null, true);
+        echo " cm</h5>-->
+                <label for=\"width\">Unesite sirinu koju zelite: </label><br>
+                <input type=\"text\" id=\"width\" name=\"width\" required class=\"form-control\" placeholder=\"Sirina mora da bude u okviru ";
+        // line 13
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "min_width", array()), "html", null, true);
+        echo " cm i ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "max_width", array()), "html", null, true);
+        echo " cm\">
+            </div>
+            <div class=\"card-body\">
+                <!--<h5 class=\"text-center\">Visina mora da bude u okviru ";
+        // line 16
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "min_height", array()), "html", null, true);
+        echo " cm i ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "max_height", array()), "html", null, true);
+        echo " cm</h5>-->
+                <label for=\"height\">Unesite visinu koju zelite: </label><br>
+                <input type=\"text\" id=\"height\" name=\"height\" required class=\"form-control\" placeholder=\"Visina mora da bude u okviru ";
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "min_height", array()), "html", null, true);
+        echo " cm i ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "max_height", array()), "html", null, true);
+        echo " cm.\">
+            </div>
+            <div class=\"card-footer text-center\">
+                <button type=\"submit\" class=\"btn btn-primary\">Dodajte model u korpu</button>
+            </div>
+
+        </form>
+    </div>
 </div>
+
 ";
     }
 
@@ -73,7 +95,7 @@ class __TwigTemplate_669b20e8dbb6c2c8b88ea583deb7c482e69c33417f5fd35ca44264c3787
 
     public function getDebugInfo()
     {
-        return array (  38 => 4,  34 => 2,  15 => 1,);
+        return array (  70 => 18,  63 => 16,  55 => 13,  48 => 11,  40 => 6,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

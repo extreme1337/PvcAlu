@@ -1,7 +1,9 @@
 {% extends "_global/index.html" %} {% block main %}
 <div>
-    <p>{{ message }}</p>
+    <h4 class="text-center">{{ message }}</h4>
+    <h5 class="text-center">Vratite se <a href="{{BASE}}model/add/{{model.model_id}}">na model</a></h5>
+    <h5 class="text-center">Klikni <a href="{{BASE}}cart">ovde</a> odete na korpu.</h5>
+    <h5 class="text-center">Klikni <a href="{{BASE}}">ovde</a> sa se vratite na pocetnu.</h5>
 
-    <p>Klikni <a href="{{BASE}}user/login">ovde</a> da se vratiš nazad.</p>
 </div>
 {% endblock %}

@@ -1,8 +1,10 @@
 {% extends "_global/index.html" %} {% block main %} {% spaceless %}
-<div>
-    <a href="{{BASE}}user/categories">Uredjivanje kategorija<br></a>
-    <a href="{{BASE}}user/manufacturers">Uredjivanje proizvodjaca<br></a>
-    <a href="{{BASE}}user/profiles">Uredjivanje profila<br></a>
-    <a href="{{BASE}}user/models">Uredjivanje modela<br></a>
+<div class="container">
+    <div class="row">
+        <a href="{{BASE}}user/categories" class="col-12 col-sm-6 col-md-6 text-center dash">Uredjivanje kategorija</a>
+        <a href="{{BASE}}user/manufacturers" class="col-12 col-sm-6 col-md-6 text-center dash">Uredjivanje proizvodjaca</a>
+        <a href="{{BASE}}user/profiles"class="col-12 col-sm-6 col-md-6 text-center dash">Uredjivanje profila</a>
+        <a href="{{BASE}}user/models" class="col-12 col-sm-6 col-md-6 text-center dash">Uredjivanje modela</a>       
+    </div>
 </div>
 {% endspaceless %} {% endblock %}

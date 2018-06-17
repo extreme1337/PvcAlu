@@ -32,33 +32,37 @@ class __TwigTemplate_3b8ee3c6fc0a66fe49775bca72fa5d6d39a109d1069e2726d592abdaee2
     public function block_main($context, array $blocks = array())
     {
         // line 2
-        echo "<h1>
-    ";
-        // line 3
+        echo "<div class=\"container\">
+    <h1 class=\"text-center\">
+        ";
+        // line 4
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "name", array()));
         echo "
-</h1>
-<div>
-    <img src=\"";
-        // line 6
+    </h1>
+    <div class=\"text-center\">
+        <img src=\"";
+        // line 7
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "picture", array()), "html", null, true);
         echo "\" alt=\"";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "name", array()), "html", null, true);
         echo "\">
-</div>
-<div>
-    <form action=\"";
-        // line 9
+    </div>
+    <div>
+        <form action=\"";
+        // line 10
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "model/add/\">
-        <button type=\"submit\">Dodaj u korpu</button>
-    </form>
+        echo "model/add/";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "model_id", array()), "html", null, true);
+        echo "/\" class=\"text-center\">
+            <button class=\"btn btn-primary\" type=\"submit\">Dodaj u korpu</button>
+        </form>
+    </div>
 </div>
 ";
     }
 
-    // line 13
+    // line 15
     public function block_naslov($context, array $blocks = array())
     {
         echo " ";
@@ -78,7 +82,7 @@ class __TwigTemplate_3b8ee3c6fc0a66fe49775bca72fa5d6d39a109d1069e2726d592abdaee2
 
     public function getDebugInfo()
     {
-        return array (  62 => 13,  53 => 9,  44 => 6,  38 => 3,  35 => 2,  15 => 1,);
+        return array (  66 => 15,  54 => 10,  45 => 7,  39 => 4,  35 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

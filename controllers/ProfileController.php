@@ -4,11 +4,15 @@ namespace App\controllers;
 
 class ProfileController extends \App\core\Controller{
     public function show($id){
+        $categoryModel = new \App\Models\CategoryModel($this->getDatabaseConnection());
+        $categories = $categoryModel->getAll();
+        $this->set('categories',$categories);
+        
         $profileModel = new \App\models\ProfileModel($this->getDatabaseConnection());
         $profile = $profileModel->getById($id);
 
         if(!$profile){
-            header('Location: {{BASE}}');
+            header('Location: '.\Configuration::BASE);
             exit;
         }
 

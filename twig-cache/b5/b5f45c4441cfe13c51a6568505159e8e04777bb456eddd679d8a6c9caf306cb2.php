@@ -36,16 +36,28 @@ class __TwigTemplate_e7409aa749a64573bde28f0480cd63fece87a59d1bdb4ef85c2d76141c5
         <a href=\"";
         // line 4
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/profile\">Dashboard</a>
+        <a href=\"";
+        // line 5
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "user/categories\">Prikazi sve kategorije</a>
     </div>
 
     <form class=\"category-form\" method=\"POST\">
-        <div>
+        <div class=\"form-group\">
             <label for=\"name\">Naziv: </label>
             <input type=\"text\" id=\"name\" name=\"name\" required>
         </div>
+        <div class=\"form-group\">
+            <label for=\"picture\">Slika: </label>
+            <input type=\"file\" id=\"picture\" class=\"form-control\" name=\"picture\" accept=\"image/png\">
+        </div>
+        <div class=\"form-group\">
+            <label for=\"description\">Opis: </label>
+            <input type=\"text\" id=\"description\" name=\"description\" required>
+        </div>
 
-        <div>
+        <div class=\"form-control\">
             <button type=\"submit\">
                 Dodaj kategoriju
             </button>
@@ -67,7 +79,7 @@ class __TwigTemplate_e7409aa749a64573bde28f0480cd63fece87a59d1bdb4ef85c2d76141c5
 
     public function getDebugInfo()
     {
-        return array (  38 => 4,  34 => 2,  15 => 1,);
+        return array (  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

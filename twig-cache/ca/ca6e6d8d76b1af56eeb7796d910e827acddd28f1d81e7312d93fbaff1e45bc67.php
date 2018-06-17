@@ -36,7 +36,15 @@ class __TwigTemplate_09688caa0a1896f53e9ed6ebf0fd56bf62f4059cdc60ba8b8d2114ffb72
         <a href=\"";
         // line 4
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/profiles\">Prikazi sve modele</a>
+        echo "user/profile\">Dashboard</a>
+        <a href=\"";
+        // line 5
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/profile\">Dashboard</a>
+        <a href=\"";
+        // line 6
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/models\">Prikazi sve modele</a>
     </div>
 
     <form class=\"models-form\" method=\"POST\">
@@ -53,11 +61,19 @@ class __TwigTemplate_09688caa0a1896f53e9ed6ebf0fd56bf62f4059cdc60ba8b8d2114ffb72
             <input type=\"text\" id=\"max_width\" name=\"max_width\" required>
         </div>
         <div>
-            <label for=\"picture\">Slika: </label>
-            <input type=\"text\" id=\"picture\" name=\"picture\" required>
+            <label for=\"min_height\">Minimalna visina: </label>
+            <input type=\"text\" id=\"min_height\" name=\"min_height\" required>
         </div>
         <div>
-            <label for=\"profile_id\">Profil: </label>
+            <label for=\"max_height\">Maksimalna visina: </label>
+            <input type=\"text\" id=\"max_height\" name=\"max_height\" required>
+        </div>
+        <div class=\"form-group\">
+            <label for=\"picture\">Slika: </label>
+            <input type=\"file\" id=\"picture\" class=\"form-control\" name=\"picture\" accept=\"image/png\">
+        </div>
+        <div>
+            <label for=\"profile\">Profil: </label>
             <input type=\"number\" id=\"profile\" name=\"profile\" required>
         </div>
         <div>
@@ -82,7 +98,7 @@ class __TwigTemplate_09688caa0a1896f53e9ed6ebf0fd56bf62f4059cdc60ba8b8d2114ffb72
 
     public function getDebugInfo()
     {
-        return array (  38 => 4,  34 => 2,  15 => 1,);
+        return array (  46 => 6,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

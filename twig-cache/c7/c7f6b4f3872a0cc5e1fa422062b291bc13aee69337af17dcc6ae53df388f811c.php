@@ -36,14 +36,18 @@ class __TwigTemplate_e2ebcdcfb3356e81e7c9fd9b36f2b9c22a449449364ab9b4be8369458a1
         <a href=\"";
         // line 4
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/models\">Prikazi sve modele &nbsp;&nbsp;&nbsp;</a>
+        echo "user/profile\">Dashboard</a>
         <a href=\"";
         // line 5
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/models\">Prikazi sve modele &nbsp;&nbsp;&nbsp;</a>
+        <a href=\"";
+        // line 6
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "user/models/add\">Dodaj novi model</a>
     </div>
 
-    <form class=\"model-form\" method=\"POST\">
+    <form class=\"model-form\" method=\"POST\" enctype=\"multipart/form-data\">
         <div>
             <label for=\"name\">Naziv: </label>
             <input type=\"text\" id=\"name\" name=\"name\" required>
@@ -57,11 +61,19 @@ class __TwigTemplate_e2ebcdcfb3356e81e7c9fd9b36f2b9c22a449449364ab9b4be8369458a1
             <input type=\"text\" id=\"max_width\" name=\"max_width\" required>
         </div>
         <div>
-            <label for=\"picture\">Kategorija: </label>
-            <input type=\"text\" id=\"picture\" name=\"picture\" required>
+            <label for=\"min_height\">Minimalna visina: </label>
+            <input type=\"text\" id=\"min_height\" name=\"min_height\" required>
         </div>
         <div>
-            <label for=\"profile_id\">Proizvodjac: </label>
+            <label for=\"max_height\">Maksimalna visina: </label>
+            <input type=\"text\" id=\"max_height\" name=\"max_height\" required>
+        </div>
+        <div class=\"form-group\">
+            <label for=\"picture\">Slika: </label>
+            <input type=\"file\" id=\"picture\" class=\"form-control\" name=\"picture\" accept=\"image/png\">
+        </div>
+        <div>
+            <label for=\"profile\">Proizvodjac: </label>
             <input type=\"number\" id=\"profile\" name=\"profile\" required>
         </div>
         <div>
@@ -86,7 +98,7 @@ class __TwigTemplate_e2ebcdcfb3356e81e7c9fd9b36f2b9c22a449449364ab9b4be8369458a1
 
     public function getDebugInfo()
     {
-        return array (  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
+        return array (  46 => 6,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

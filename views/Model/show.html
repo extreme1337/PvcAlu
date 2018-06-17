@@ -1,13 +1,15 @@
 {% extends "_global/index.html" %} {% block main %}
-<h1>
-    {{model.name|escape}}
-</h1>
-<div>
-    <img src="{{BASE}}{{model.picture}}" alt="{{model.name}}">
-</div>
-<div>
-    <form action="{{BASE}}model/add/">
-        <button type="submit">Dodaj u korpu</button>
-    </form>
+<div class="container">
+    <h1 class="text-center">
+        {{model.name|escape}}
+    </h1>
+    <div class="text-center">
+        <img src="{{BASE}}{{model.picture}}" alt="{{model.name}}">
+    </div>
+    <div>
+        <form action="{{BASE}}model/add/{{model.model_id}}/" class="text-center">
+            <button class="btn btn-primary" type="submit">Dodaj u korpu</button>
+        </form>
+    </div>
 </div>
 {% endblock %} {% block naslov %} {{model.name|escape}} {% endblock %}

@@ -25,9 +25,15 @@
             $categoryModel = $this->getEdit($categoryId);
 
             $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+            $picture = filter_input(INPUT_POST,'picture',FILTER_SANITIZE_STRING);
+            $description = filter_input(INPUT_POST,'description',FILTER_SANITIZE_STRING);
+            
 
             $categoryModel->editById($categoryId, [
-                'name' => $name
+                'name' => $name,
+                'picture' => $picture,
+                'description' => $description,
+                'administrator_id' => $this->getSession()->get('administrator_id')
             ]);
 
             $this->redirect(\Configuration::BASE . 'user/categories');
@@ -37,13 +43,21 @@
 
         }
 
+        public function deleteById(){}
+
         public function postAdd() {
             $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 
             $categoryModel = new \App\Models\CategoryModel($this->getDatabaseConnection());
+            $picture = filter_input(INPUT_POST,'picture',FILTER_SANITIZE_STRING);
+            $description = filter_input(INPUT_POST,'description',FILTER_SANITIZE_STRING);
+            
             
             $categoryId = $categoryModel->add([
-                'name' => $name
+                'name' => $name,
+                'picture' => $picture,
+                'description' => $description,
+                'administrator_id' => $this->getSession()->get('administrator_id')
             ]);
 
             if ($categoryId) {

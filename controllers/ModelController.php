@@ -3,12 +3,20 @@
 namespace App\controllers;
 
 class ModelController extends \App\core\Controller{
+    private $modelId;
+    private $sessionId;
     public function show($id){
+        $categoryModel = new \App\Models\CategoryModel($this->getDatabaseConnection());
+        $categories = $categoryModel->getAll();
+        $this->set('categories',$categories);
+
+        $sessionId = $this->getSessionId();
         $modelModel = new \App\models\ModelModel($this->getDatabaseConnection());
         $model = $modelModel->getById($id);
+        $this->modelId = $id;
 
         if(!$model){
-            header('Location: {{BASE}}');
+            header('Location: '.\Configuration::BASE);
             exit;
         }
 
@@ -25,29 +33,60 @@ class ModelController extends \App\core\Controller{
             ]
             );
     }
-    public function addToCart(){}
-    public function postAddToCart(){
+    public function addToCart($modelId){
+        $categoryModel = new \App\Models\CategoryModel($this->getDatabaseConnection());
+        $categories = $categoryModel->getAll();
+        $this->set('categories',$categories);
+
         $modelModel = new \App\models\ModelModel($this->getDatabaseConnection());
+        $model = $modelModel->getById($modelId);
+        $sessionId = $this->getSessionId();
+        $this->set('model',$model);
+    }
+    public function postAddToCart($modelId){
+        $categoryModel = new \App\Models\CategoryModel($this->getDatabaseConnection());
+        $categories = $categoryModel->getAll();
+        $this->set('categories',$categories);
         
-        $width = \filter_input(INPUT_POST, 'width', FILTER_SANITIZE_NUMBER_DECIMAL);
-        $height = \filter_input(INPUT_POST, 'height', FILTER_SANITIZE_NUMBER_DECIMAL);
-        if($width >= $modelModel.minWidth && $width <= $modelModel.maxWidth){
+        $modelModel = new \App\models\ModelModel($this->getDatabaseConnection());
+        $model = $modelModel->getById($modelId);
+        $this->set('model',$model);
+        if(!$model){
+            header('Location: '.\Configuration::BASE.profile/model/'.$modelId');
+            exit;
+        }
+        $width = \filter_input(INPUT_POST, 'width');
+        $height = \filter_input(INPUT_POST, 'height');
+        if(!($width >= $model->min_width && $width <= $model->max_width)){
             $this->set('message','Unesena sirina ne moze biti porucena');
             return;
         }
-        if($height >= $modelModel.minHeight && $height <= $modelModel.maxHeight){
+        if(!($height >= $model->min_height && $height <= $model->max_height)){
             $this->set('message','Unesena visina ne moze biti porucena');
             return;
         }
-        $area1 = $width * $height;
-        $area = \filter_input(INPUT_POST, $area1 , FILTER_SANITIZE_NUMBER_DECIMAL);
-
+        
+        $area  = $width * $height;
         $profileModel = new \App\models\ProfileModel($this->getDatabaseConnection());
-        $priceForModel = $area1 * $profileModel.price_per_unit_area;
-        $price_of_model = \filter_input(INPUT_POST,$priceForModel,FILTER_SANITIZE_NUMBER_DECIMAL);
+        $priceForModel = $profileModel->innerJoinTwoTables($modelId);
+        $price = $area * $priceForModel['price_per_unit_area'];
 
-
+            
         $cartModel = new \App\models\CartModel($this->getDatabaseConnection());
-        $cartModel->add([]);
+        $cartModel->add([
+            'session_number' => $this->getSessionId()
+        ]);
+        $cartId = $cartModel->selectIdWhereFieldName('session_number', $this->getSessionId());
+        
+        $cartModelModel = new \App\models\CartModelModel($this->getDatabaseConnection());
+        
+        $cartModelModel->add([
+            'area' => (float)$area,
+            'cart_id' =>$cartId['cart_id'],
+            'model_id' => $modelId,
+            'price_for_model' => $price
+        ]);
+        $this->set('message','Uspesno ste dodali proizvod u korpu');
+        //header('Location: '.\Configuration::BASE);
     }
 }

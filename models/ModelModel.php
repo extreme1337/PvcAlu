@@ -13,9 +13,9 @@ class ModelModel extends \App\Core\Model{
             'min_width'         => \App\core\Field::editableMaxDecimal(7,2),
             'max_height'        => \App\core\Field::editableMaxDecimal(7,2),
             'max_height'        => \App\core\Field::editableMaxDecimal(7,2), 
-            'administrator_id'  => \App\core\Field::readOnlyInteger(11),
+            'administrator_id'  => \App\core\Field::editableInteger(11),
             'picture'           => \App\core\Field::editableString(255), 
-            'profile_id'        => \App\core\Field::readOnlyInteger(11)
+            'profile_id'        => \App\core\Field::editableInteger(11)
             ];
     }
 
@@ -28,5 +28,6 @@ class ModelModel extends \App\Core\Model{
         public function getByProfileId(int $id) {
             return $this->getAllByFieldName('profile_id',$id);
         }
+        
         
 }

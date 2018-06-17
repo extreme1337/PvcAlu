@@ -36,6 +36,10 @@ class __TwigTemplate_08abe0aba1f228e31740c97a1a94d8f989e5a7a6da4de59a8dce04fed4c
         <a href=\"";
         // line 4
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/profile\">Dashboard</a>
+        <a href=\"";
+        // line 5
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "user/manufacturers\">Prikazi sve proizvodjace</a>
     </div>
 
@@ -67,7 +71,7 @@ class __TwigTemplate_08abe0aba1f228e31740c97a1a94d8f989e5a7a6da4de59a8dce04fed4c
 
     public function getDebugInfo()
     {
-        return array (  38 => 4,  34 => 2,  15 => 1,);
+        return array (  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

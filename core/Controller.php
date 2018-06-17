@@ -21,6 +21,12 @@ class Controller{
         $this->session = $session;
     }
 
+    final public function getSessionId(){
+        return (string)$this->session->getSessionId();
+        
+    }
+    
+
     final public function &getDatabaseConnection(): \App\Core\DatabaseConnection{
         return $this->dbc;
     }

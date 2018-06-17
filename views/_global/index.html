@@ -1,47 +1,109 @@
 <!doctype html>
-<html>
+<html lang="sr">
 
 <head>
     <title>Pvc Alu stolarija - {% block naslov %}Pocetna{% endblock %}</title>
+    <link rel="icon" href="{{BASE}}assets/images/favicon.png" type="image/x-icon" />
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{BASE}}assets/libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{BASE}}assets/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{BASE}}assets/libs/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="{{BASE}}assets/css/main.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="banners">
-            <a href="{{BASE}}" class="banner">
-                <img src="{{BASE}}assets/img/banner-1.jpg" alt="Banner-1">
-            </a>
-        </div>
-        <div class="top-right-side">
-            <form action="{{BASE}}user/login/" method="get">
-                <button type="submit">Login</button>
-            </form>
-            <a href="{{BASE}}cart/{{cart_model.cart_model_id}}">
-                <img src="{{BASE}}assets/images/cart.jpg" alt="korpa">
 
-            </a>
-        </div>
-        <nav id="main-menu">
-            <ul>
-                <li><a href="{{BASE}}">Pocetna</a>{% for category in categories %}
-                    <li>
-                        <a href="{{BASE}}category/{{category.category_id}}">
-                            {{category.name|escape|title}}
-                        </a> {% endfor %}
-                        <li><a href="{{BASE}}contact">Kontakt</a>
-                            <li><a href="{{BASE}}infos">O nama</a>
-                                <li><a href="{{BASE}}log-out">Odjava</a>
-            </ul>
-        </nav>
+
+    <div class="container">
+        <header>
+
+            <div class="row">
+                <div class="col col-sm">
+                    <a href="{{BASE}}">
+                        <img src="{{BASE}}assets/images/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="col col-sm">
+                    <div class="social-icons">
+                        <a href="#"><i class="fa fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i> </a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="{{BASE}}cart/{{cart_model.cart_model_id}}">
+                            <i class="fa fa-shopping-cart"></i></a>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="{{BASE}}"><i class="fa fa-home"></i> Pocetna</a> {% for category in categories %}
+                        <a class="nav-item nav-link" href="{{BASE}}category/{{category.category_id}}"><i class="fa fa-list"></i> {{category.name|escape|title}}</a> {% endfor %}
+                        <!--  <a class="nav-item nav-link" href="{{BASE}}contact"><i class="fa fa-phone"></i>Kontakt</a>
+                                <a class="nav-item nav-link" href="{{BASE}}log-out"><i class="fa fa-sign-out"></i>Odjava</a>    -->
+
+                    </div>
+                </div>
+                <form action="{{BASE}}user/login/" method="get">
+                    <button type="submit" class="btn btn-primary navbar-btn">Login</button>
+                </form>
+            </nav>
+
+
+        </header>
+
+
+
+        <main>
+            {% block main %} {% endblock %}
+        </main>
+
+
+        <footer>
+
+            <div class="row">
+                <div class="footer-top col col-sm-12 col-md-12">
+
+                    <a href="{{BASE}}">
+                        <img class="slika" src="{{BASE}}assets/images/logo.png" alt="logo">
+                    </a>
+
+
+                    <p class="text">Kontakt</p>
+                    <p class="text">Put za Mojsilovo bb</p>
+                    <p class="text">11000, Beograd</p>
+                    <p class="text">Tel: 011-654-321</p>
+                    <p class="text">office@invisible.rs</p>
+
+
+
+
+
+                </div>
+            </div>
+            <div class="footer-lower">
+                <div class="col-sm-12">
+                    <hr>
+                </div>
+                <div class="col-sm-12">
+                    <p class="text-center">Sva prava zadržana &copy; 2018 | Milan&amp;Marko</p>
+                </div>
+            </div>
+
+        </footer>
     </div>
-    <main>
-        {% block main %} {% endblock %}
-    </main>
-    <footer> &copy; 2018 - Pvc Alu prodavnica Milan&amp;Marko</footer>
+
+
+
+    <script src="{{BASE}}assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="{{BASE}}assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </body>
-<script src="{{BASE}}assets/libs/jquery/dist/jquery.min.js" />
-<script src="{{BASE}}assets/libs/bootstrap/dist/js/bootstrap.min.js" />
 
 </html>

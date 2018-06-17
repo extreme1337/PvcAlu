@@ -1,12 +1,49 @@
 {% extends "_global/index.html" %} {% block main %}
-<h1>
-    {{profile.name|escape}}
-</h1>
-<p>Spisak modela napravljenih od ovog profila: </p>
-<ul>{% for model in modelInProfile %}
-    <li>
-        <a href="{{BASE}}profile/model/{{ model.model_id}}">
-                {{ model.name|escape }}<br>
-            </a> {% endfor %}
-</ul>
-{% endblock %} {% block naslov %} {{profile.name|escape}} {% endblock %}
+<h4 class="text-center">Spisak u korpi je: </h4>
+
+<div class="container">
+    <div class="row">
+
+
+        <table class="table table-bordered table-hover text-center table-responsive w-100 d-block d-md-table">
+            <thead>
+                <tr>
+
+                    <th scope="col">Opis proizvoda</th>
+                    <th scope="col">Cena</th>
+                    <th scope="col">Ukloniti</th>
+                </tr>
+            </thead>
+
+            <tbody> {% for model in cartModelModel %}
+                <tr>
+
+                    <td>
+                        <a href="{{BASE}}profile/model/{{model.model_id}}">
+                            {{ model.name }}
+                        </a></td>
+                    <td>
+                        <p>Cena po povrsini: {{model.price_for_model}} RSD </p>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                    </td>
+                    {% endfor %}
+
+
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+
+
+    </div>
+</div>
+<form action="{{BASE}}cart/order/" class="text-center">
+    <button type="submit" class="btn btn-primary">Naruci proizvode</button>
+</form>
+
+{% endblock %} {% block naslov %} {{category.name|escape}} {% endblock %}

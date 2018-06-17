@@ -32,45 +32,85 @@ class __TwigTemplate_2ed7326df0cb6b7aa2f535c97a24cdee5cd145c461247f5797141afa85f
     public function block_main($context, array $blocks = array())
     {
         // line 2
-        echo "<h1>
-    ";
-        // line 3
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "name", array()));
-        echo "
-</h1>
-<p>Spisak modela napravljenih od ovog profila: </p>
-<ul>";
-        // line 6
+        echo "<h4 class=\"text-center\">Spisak u korpi je: </h4>
+
+<div class=\"container\">
+    <div class=\"row\">
+
+
+        <table class=\"table table-bordered table-hover text-center table-responsive w-100 d-block d-md-table\">
+            <thead>
+                <tr>
+
+                    <th scope=\"col\">Opis proizvoda</th>
+                    <th scope=\"col\">Cena</th>
+                    <th scope=\"col\">Ukloniti</th>
+                </tr>
+            </thead>
+
+            <tbody> ";
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["modelInProfile"] ?? null));
+        $context['_seq'] = twig_ensure_traversable(($context["cartModelModel"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["model"]) {
-            // line 7
-            echo "    <li>
-        <a href=\"";
-            // line 8
+            // line 19
+            echo "                <tr>
+
+                    <td>
+                        <a href=\"";
+            // line 22
             echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
             echo "profile/model/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "model_id", array()), "html", null, true);
             echo "\">
-                ";
-            // line 9
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "name", array()));
-            echo "<br>
-            </a> ";
+                            ";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "name", array()), "html", null, true);
+            echo "
+                        </a></td>
+                    <td>
+                        <p>Cena po povrsini: ";
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "price_for_model", array()), "html", null, true);
+            echo " RSD </p>
+                    </td>
+                    <td>
+                        <button type=\"button\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></button>
+                    </td>
+                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['model'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 11
-        echo "</ul>
+        // line 32
+        echo "
+
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+
+
+    </div>
+</div>
+<form action=\"";
+        // line 45
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "cart/order/\" class=\"text-center\">
+    <button type=\"submit\" class=\"btn btn-primary\">Naruci proizvode</button>
+</form>
+
 ";
     }
 
-    // line 12
+    // line 49
     public function block_naslov($context, array $blocks = array())
     {
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "name", array()));
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "name", array()));
         echo " ";
     }
 
@@ -86,7 +126,7 @@ class __TwigTemplate_2ed7326df0cb6b7aa2f535c97a24cdee5cd145c461247f5797141afa85f
 
     public function getDebugInfo()
     {
-        return array (  70 => 12,  65 => 11,  57 => 9,  51 => 8,  48 => 7,  44 => 6,  38 => 3,  35 => 2,  15 => 1,);
+        return array (  110 => 49,  101 => 45,  86 => 32,  74 => 26,  68 => 23,  62 => 22,  57 => 19,  53 => 18,  35 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

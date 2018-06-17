@@ -1,26 +1,28 @@
 {% extends "_global/index.html" %} {% block main %}
-<div>
-    <p>
-        Odabrali ste model: {{model.name}}
-    </p><br>
-    <p>
-        Unesite dimenzija za taj model:
-    </p><br>
-</div>
-<div>
-    <form method="post">
-        <div>
-            <label for="width">Unesite sirinu koju zelite: </label><br>
-            <input type="text" id="width" name="width" required placeholder="Unesite sirinu.">
-        </div>
-        <div>
-            <label for="height">Unesite visinu koju zelite: </label><br>
-            <input type="text" id="height" name="height" required placeholder="Unesite visinu.">
-        </div>
-        <div>
-            <button type="submit">Dodajte model u korpu</button>
-        </div>
+<div class="container">
+    <div class="row">
+        <form method="post" class="col col-md-8 offset-md-2 card">
+            <div class="card-header ">
+                <h3 class="text-center">Odabrali ste model: {{model.name}}</h3>
 
-    </form>
+            </div>
+            <div class="card-body">
+                <h4 class="text-center">Unesite dimenzija za taj model:</h4><br>
+                <!--<h5 class="text-center">Sirina mora da bude u okviru {{model.min_width}} cm i {{model.max_width}} cm</h5>-->
+                <label for="width">Unesite sirinu koju zelite: </label><br>
+                <input type="text" id="width" name="width" required class="form-control" placeholder="Sirina mora da bude u okviru {{model.min_width}} cm i {{model.max_width}} cm">
+            </div>
+            <div class="card-body">
+                <!--<h5 class="text-center">Visina mora da bude u okviru {{model.min_height}} cm i {{model.max_height}} cm</h5>-->
+                <label for="height">Unesite visinu koju zelite: </label><br>
+                <input type="text" id="height" name="height" required class="form-control" placeholder="Visina mora da bude u okviru {{model.min_height}} cm i {{model.max_height}} cm.">
+            </div>
+            <div class="card-footer text-center">
+                <button type="submit" class="btn btn-primary">Dodajte model u korpu</button>
+            </div>
+
+        </form>
+    </div>
 </div>
+
 {% endblock %}

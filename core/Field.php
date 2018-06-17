@@ -11,7 +11,7 @@ final class Field{
         $this->editable = $editable;
     }
 
-    public function isValid(string $value){
+    public function isValid($value){
         return \preg_match($this->pattern,$value);
     }
 

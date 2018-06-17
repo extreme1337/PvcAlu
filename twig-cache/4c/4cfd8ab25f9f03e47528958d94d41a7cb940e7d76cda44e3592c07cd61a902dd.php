@@ -33,47 +33,96 @@ class __TwigTemplate_a6db7f7b6da8726a3eac32f3cea40895468ad2bf493fa40c9baaad19590
         echo " ";
         ob_start();
         // line 2
-        echo "<nav>
-    <ul>
-        ";
-        // line 4
+        echo "
+
+        <div id=\"slider\" class=\"carousel slide\" data-ride=\"carousel\">
+
+                
+                <ul class=\"carousel-indicators\">
+                  <li data-target=\"#slider\" data-slide-to=\"0\" class=\"active\"></li>
+                  <li data-target=\"#slider\" data-slide-to=\"1\"></li>
+                  <li data-target=\"#slider\" data-slide-to=\"2\"></li>
+                </ul>
+              
+               
+                <div class=\"carousel-inner\">
+                  <div class=\"carousel-item active\">
+                    <img src=\"";
+        // line 16
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "assets/images/slide3.png\" alt=\"1\" class=\"img-responsive\">
+                  </div>
+                  <div class=\"carousel-item\">
+                    <img src=\"";
+        // line 19
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "assets/images/slide2.png\" alt=\"2\" class=\"img-responsive\">
+                  </div>
+                  <div class=\"carousel-item\">
+                    <img src=\"";
+        // line 22
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "assets/images/slide1.png\" alt=\"3\" class=\"img-responsive\">
+                  </div>
+                </div>
+              
+               
+                <a class=\"carousel-control-prev\" href=\"#slider\" data-slide=\"prev\">
+                  <span class=\"carousel-control-prev-icon\"></span>
+                </a>
+                <a class=\"carousel-control-next\" href=\"#slider\" data-slide=\"next\">
+                  <span class=\"carousel-control-next-icon\"></span>
+                </a>
+              
+              </div>
+    <div class=\"container\">
+    <div class=\"row dupe\">
+       
+            ";
+        // line 38
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 5
-            echo "        <li>
-            <a href=\"";
-            // line 6
+            // line 39
+            echo "            <div class=\"card col-12 col-sm-6 col-md-6 text-center\">  
+                      <div class=\"card-body\">
+                        <a href=\"";
+            // line 41
             echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
             echo "category/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", array()), "html", null, true);
-            echo "\">
-                ";
-            // line 7
-            echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()))), "html", null, true);
-            echo "
-            </a>
-            <img src=\"";
-            // line 9
+            echo "\" class=\"card-title\">
+                            <img src=\"";
+            // line 42
             echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "picture", array()), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()), "html", null, true);
-            echo "\">
-            <p>";
-            // line 10
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "description", array()), "html", null, true);
-            echo "</p> ";
+            echo "\" class=\" luda img-responsive\">
+                                                   
+                        </a> 
+                        <p class=\"text-justify\">";
+            // line 45
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "description", array()));
+            echo "</p> 
+                </div>
+                
+
+            </div>
+            
+            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        echo " </li>
-    </ul>
-</nav>
+        // line 52
+        echo "           
+    </div>
+</div>
+
 ";
         echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
-        // line 13
+        // line 56
         echo " ";
     }
 
@@ -89,7 +138,7 @@ class __TwigTemplate_a6db7f7b6da8726a3eac32f3cea40895468ad2bf493fa40c9baaad19590
 
     public function getDebugInfo()
     {
-        return array (  77 => 13,  65 => 10,  58 => 9,  53 => 7,  47 => 6,  44 => 5,  40 => 4,  36 => 2,  15 => 1,);
+        return array (  126 => 56,  119 => 52,  106 => 45,  97 => 42,  91 => 41,  87 => 39,  83 => 38,  64 => 22,  58 => 19,  52 => 16,  36 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

@@ -32,41 +32,55 @@ class __TwigTemplate_1791825d80ee271f38ccf04d840cc26a41f5036e967749a19d4732c244e
     public function block_main($context, array $blocks = array())
     {
         // line 2
-        echo "<h1>
-    ";
-        // line 3
+        echo "<div class=\"container\">
+    <h1 class=\"text-center\">
+        ";
+        // line 4
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "name", array()));
         echo "
-</h1>
-<p>Spisak modela napravljenih od ovog profila: </p>
-<ul>";
-        // line 6
+    </h1>
+    <p class=\"text-center\">Spisak modela napravljenih od ovog profila: </p>
+    <div class=\"row\">
+
+        ";
+        // line 9
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["modelInProfile"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["model"]) {
-            // line 7
-            echo "    <li>
-        <a href=\"";
-            // line 8
+            // line 10
+            echo "        <div class=\"card col-12 col-sm-12 col-md-6 text-center\">
+            <h3>";
+            // line 11
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "name", array()));
+            echo "</h3>
+            <a href=\"";
+            // line 12
             echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
             echo "profile/model/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "model_id", array()), "html", null, true);
             echo "\">
-                ";
-            // line 9
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "name", array()));
-            echo "<br>
-            </a> ";
+                <br>
+                <img src=\"";
+            // line 14
+            echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "picture", array()), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "name", array()), "html", null, true);
+            echo "\">
+            </a>
+        </div>
+        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['model'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 11
-        echo "</ul>
+        // line 18
+        echo "    </div>
+</div>
 ";
     }
 
-    // line 12
+    // line 20
     public function block_naslov($context, array $blocks = array())
     {
         echo " ";
@@ -86,7 +100,7 @@ class __TwigTemplate_1791825d80ee271f38ccf04d840cc26a41f5036e967749a19d4732c244e
 
     public function getDebugInfo()
     {
-        return array (  70 => 12,  65 => 11,  57 => 9,  51 => 8,  48 => 7,  44 => 6,  38 => 3,  35 => 2,  15 => 1,);
+        return array (  84 => 20,  78 => 18,  65 => 14,  58 => 12,  54 => 11,  51 => 10,  47 => 9,  39 => 4,  35 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

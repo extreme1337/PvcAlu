@@ -25,10 +25,10 @@
             $manufacturerModel = $this->getEdit($manufacturerId);
 
             $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-            $adminId = 1;
+            
 
             $manufacturerModel->editById($manufacturerId, [
-                'administrator_id' => $adminId,
+                'administrator_id' =>$this->getSession()->get('administrator_id'),
                 'name' => $name
             ]);
 
@@ -41,12 +41,12 @@
 
         public function postAdd() {
             $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-            $adminId = 1;
+            
 
             $manufacturerModel = new \App\Models\ManufacturerModel($this->getDatabaseConnection());
             
             $manufacturId = $manufacturerModel->add([
-                'administrator_id' => $adminId,
+                'administrator_id' => $this->getSession()->get('administrator_id'),
                 'name' => $name
             ]);
 

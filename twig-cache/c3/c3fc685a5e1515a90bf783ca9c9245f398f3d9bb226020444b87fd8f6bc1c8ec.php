@@ -36,26 +36,30 @@ class __TwigTemplate_e78850a3f3831c938ed146b5fa9a8a6da25ba2e9ab8fc5689be6e2ed986
         <a href=\"";
         // line 4
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/models/add\">Dodaj novu kategoriju</a>
+        echo "user/profile\">Dashboard</a>
+        <a href=\"";
+        // line 5
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/models/add\">Dodaj novi model</a>
     </div>
 
     <div class=\"models\">
         <ul>
             ";
-        // line 9
+        // line 10
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["models"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["model"]) {
-            // line 10
+            // line 11
             echo "            <li>
                 <a href=\"";
-            // line 11
+            // line 12
             echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
             echo "user/models/edit/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "model_id", array()), "html", null, true);
             echo "\">
                     ";
-            // line 12
+            // line 13
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "name", array()));
             echo "
                 </a> ";
@@ -63,7 +67,7 @@ class __TwigTemplate_e78850a3f3831c938ed146b5fa9a8a6da25ba2e9ab8fc5689be6e2ed986
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['model'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 14
+        // line 15
         echo "        </ul>
     </div>
 </div>
@@ -82,7 +86,7 @@ class __TwigTemplate_e78850a3f3831c938ed146b5fa9a8a6da25ba2e9ab8fc5689be6e2ed986
 
     public function getDebugInfo()
     {
-        return array (  67 => 14,  59 => 12,  53 => 11,  50 => 10,  46 => 9,  38 => 4,  34 => 2,  15 => 1,);
+        return array (  71 => 15,  63 => 13,  57 => 12,  54 => 11,  50 => 10,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

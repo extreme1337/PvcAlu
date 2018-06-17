@@ -36,23 +36,34 @@ class __TwigTemplate_1cbdcbff0f5f482a65c9d6971ebb2ace5359b18e9b140ba2cac957517f6
         <a href=\"";
         // line 4
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/categories\">Prikazi sve kategorije &nbsp;&nbsp;&nbsp;</a>
+        echo "user/profile\">Dashboard</a>
         <a href=\"";
         // line 5
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/categories\">Prikazi sve kategorije &nbsp;&nbsp;&nbsp;</a>
+        <a href=\"";
+        // line 6
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "user/categories/add\">Dodaj novu kategoriju</a>
     </div>
 
     <form class=\"category-form\" method=\"POST\">
-        <div>
+        <div class=\"form-group\">
             <label for=\"name\">Naziv: </label>
             <input type=\"text\" id=\"name\" name=\"name\" value=\"";
-        // line 11
+        // line 12
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "name", array()));
         echo "\">
         </div>
-
-        <div>
+        <div class=\"form-group\">
+            <label for=\"picture\">Slika: </label>
+            <input type=\"file\" id=\"picture\" class=\"form-control\" name=\"picture\" accept=\"image/png\">
+        </div>
+        <div class=\"form-group\">
+            <label for=\"description\">Opis: </label>
+            <input type=\"text\" id=\"description\" name=\"description\" required>
+        </div>
+        <div class=\"form-group\">
             <button type=\"submit\">
                 Izmjeni kategoriju
             </button>
@@ -74,7 +85,7 @@ class __TwigTemplate_1cbdcbff0f5f482a65c9d6971ebb2ace5359b18e9b140ba2cac957517f6
 
     public function getDebugInfo()
     {
-        return array (  51 => 11,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
+        return array (  55 => 12,  46 => 6,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

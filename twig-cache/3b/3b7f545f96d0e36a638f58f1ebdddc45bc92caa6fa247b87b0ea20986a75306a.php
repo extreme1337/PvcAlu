@@ -36,11 +36,15 @@ class __TwigTemplate_47f80d8278bbcf142a4ad289ef8f6b5c305e78adffcb516c076dc341ef1
         <a href=\"";
         // line 4
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/categories\">Prikazi sve kategorije &nbsp;&nbsp;&nbsp;</a>
+        echo "user/profile\">Dashboard</a>
         <a href=\"";
         // line 5
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/categories/add\">Dodaj novu kategoriju</a>
+        echo "user/profiles\">Prikazi sve profile &nbsp;&nbsp;&nbsp;</a>
+        <a href=\"";
+        // line 6
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/profiles/add\">Dodaj novi profil</a>
     </div>
 
     <form class=\"profile-form\" method=\"POST\">
@@ -57,11 +61,11 @@ class __TwigTemplate_47f80d8278bbcf142a4ad289ef8f6b5c305e78adffcb516c076dc341ef1
             <input type=\"number\" id=\"price_per_unit_area\" name=\"price_per_unit_area\" required>
         </div>
         <div>
-            <label for=\"category_id\">Kategorija: </label>
+            <label for=\"category\">Kategorija: </label>
             <input type=\"number\" id=\"category\" name=\"category\" required>
         </div>
         <div>
-            <label for=\"manufacturer_id\">Proizvodjac: </label>
+            <label for=\"manufacturer\">Proizvodjac: </label>
             <input type=\"number\" id=\"manufacturer\" name=\"manufacturer\" required>
         </div>
         <div>
@@ -86,7 +90,7 @@ class __TwigTemplate_47f80d8278bbcf142a4ad289ef8f6b5c305e78adffcb516c076dc341ef1
 
     public function getDebugInfo()
     {
-        return array (  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
+        return array (  46 => 6,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

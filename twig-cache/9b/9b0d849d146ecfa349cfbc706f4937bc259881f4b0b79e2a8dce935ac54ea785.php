@@ -36,26 +36,30 @@ class __TwigTemplate_38dc4a15a245c4752a915735e7b6d9c710ac2523924f3fc5fe73bc82382
         <a href=\"";
         // line 4
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/profiles/add\">Dodaj novu kategoriju</a>
+        echo "user/profile\">Dashboard</a>
+        <a href=\"";
+        // line 5
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/profiles/add\">Dodaj novi profil</a>
     </div>
 
     <div class=\"profiles\">
         <ul>
             ";
-        // line 9
+        // line 10
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["profiles"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["profile"]) {
-            // line 10
+            // line 11
             echo "            <li>
                 <a href=\"";
-            // line 11
+            // line 12
             echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
             echo "user/profiles/edit/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["profile"], "profile_id", array()), "html", null, true);
             echo "\">
                     ";
-            // line 12
+            // line 13
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["profile"], "name", array()));
             echo "
                 </a> ";
@@ -63,7 +67,7 @@ class __TwigTemplate_38dc4a15a245c4752a915735e7b6d9c710ac2523924f3fc5fe73bc82382
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['profile'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 14
+        // line 15
         echo "        </ul>
     </div>
 </div>
@@ -82,7 +86,7 @@ class __TwigTemplate_38dc4a15a245c4752a915735e7b6d9c710ac2523924f3fc5fe73bc82382
 
     public function getDebugInfo()
     {
-        return array (  67 => 14,  59 => 12,  53 => 11,  50 => 10,  46 => 9,  38 => 4,  34 => 2,  15 => 1,);
+        return array (  71 => 15,  63 => 13,  57 => 12,  54 => 11,  50 => 10,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

@@ -9,17 +9,23 @@ class MainController extends \App\Core\Controller {
         $categoryModel = new \App\Models\CategoryModel($this->getDatabaseConnection());
         $categories = $categoryModel->getAll();
         $this->set('categories',$categories);
-
-        //$this->getSession()->put('neki_kljuc','Neka vrednost' . rand(100,999));
+        
         $staraVrednost = $this->getSession()->get('neki_kljuc','/');
         $this->set('podatak',$staraVrednost);
     }
 
     public function getLogin(){
+        $categoryModel = new \App\Models\CategoryModel($this->getDatabaseConnection());
+        $categories = $categoryModel->getAll();
+        $this->set('categories',$categories);
 
     }
 
     public function postLogin(){
+        $categoryModel = new \App\Models\CategoryModel($this->getDatabaseConnection());
+        $categories = $categoryModel->getAll();
+        $this->set('categories',$categories);
+        
         $email = \filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
         $password = \filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
@@ -41,12 +47,12 @@ class MainController extends \App\Core\Controller {
             return;
         }
 
-        /*$passwordHash = $admin->password;
-        if(!password_verify($password,$passwordHash)){
+        $passwordHash = $admin->password;
+        if(password_verify($password,$passwordHash)){
             sleep(1);
             $this->set('message','Doslo je do greske: lozinka nije ispravna');
             return;
-        }*/
+        }
 
         $this->getSession()->put('administrator_id',$admin->administrator_id);
         $this->getSession()->save();

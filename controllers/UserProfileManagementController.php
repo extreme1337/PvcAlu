@@ -25,9 +25,19 @@
             $profileModel = $this->getEdit($profileId);
 
             $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+            $picture = filter_input(INPUT_POST,'picture',FILTER_SANITIZE_STRING);
+            $pricePerUnitArea = filter_input(INPUT_POST,'price_per_unit_area',FILTER_SANITIZE_STRING);
+            $category = filter_input(INPUT_POST,'category');
+            $manufacturer = filter_input(INPUT_POST,'manufacturer');
+
 
             $profileModel->editById($profileId, [
-                'name' => $name
+                'name' => $name,
+                'picture' => $picture,
+                'price_per_unit_area' => $pricePerUnitArea,
+                'category_id' => $category,
+                'manufacturer_id' => $manufacturer,
+                'administrator_id' => $this->getSession()->get('administrator_id')
             ]);
 
             $this->redirect(\Configuration::BASE . 'user/profiles');
@@ -39,11 +49,20 @@
 
         public function postAdd() {
             $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+            $picture = filter_input(INPUT_POST,'picture',FILTER_SANITIZE_STRING);
+            $pricePerUnitArea = filter_input(INPUT_POST,'price_per_unit_area',FILTER_SANITIZE_STRING);
+            $category = filter_input(INPUT_POST,'category');
+            $manufacturer = filter_input(INPUT_POST,'manufacturer');
 
             $profileModel = new \App\Models\ProfileModel($this->getDatabaseConnection());
             
             $profileId = $profileModel->add([
-                'name' => $name
+                'name' => $name,
+                'picture' => $picture,
+                'price_per_unit_area' => $pricePerUnitArea,
+                'category_id' => $category,
+                'manufacturer_id' => $manufacturer,
+                'administrator_id' => $this->getSession()->get('administrator_id')
             ]);
 
             if ($profileId) {

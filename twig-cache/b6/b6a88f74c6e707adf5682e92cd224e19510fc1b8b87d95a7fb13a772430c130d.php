@@ -33,27 +33,29 @@ class __TwigTemplate_048917646d7773ec220bf39ea30bbb297c73f72b5144b46c640704a2a3d
         echo " ";
         ob_start();
         // line 2
-        echo "<div>
-    <a href=\"";
-        // line 3
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/categories\">Uredjivanje kategorija<br></a>
-    <a href=\"";
+        echo "<div class=\"container\">
+    <div class=\"row\">
+        <a href=\"";
         // line 4
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/manufacturers\">Uredjivanje proizvodjaca<br></a>
-    <a href=\"";
+        echo "user/categories\" class=\"col-12 col-sm-6 col-md-6 text-center dash\">Uredjivanje kategorija</a>
+        <a href=\"";
         // line 5
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/profiles\">Uredjivanje profila<br></a>
-    <a href=\"";
+        echo "user/manufacturers\" class=\"col-12 col-sm-6 col-md-6 text-center dash\">Uredjivanje proizvodjaca</a>
+        <a href=\"";
         // line 6
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/models\">Uredjivanje modela<br></a>
+        echo "user/profiles\"class=\"col-12 col-sm-6 col-md-6 text-center dash\">Uredjivanje profila</a>
+        <a href=\"";
+        // line 7
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/models\" class=\"col-12 col-sm-6 col-md-6 text-center dash\">Uredjivanje modela</a>       
+    </div>
 </div>
 ";
         echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
-        // line 8
+        // line 10
         echo " ";
     }
 
@@ -69,7 +71,7 @@ class __TwigTemplate_048917646d7773ec220bf39ea30bbb297c73f72b5144b46c640704a2a3d
 
     public function getDebugInfo()
     {
-        return array (  57 => 8,  51 => 6,  47 => 5,  43 => 4,  39 => 3,  36 => 2,  15 => 1,);
+        return array (  59 => 10,  52 => 7,  48 => 6,  44 => 5,  40 => 4,  36 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

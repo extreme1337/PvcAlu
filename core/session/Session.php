@@ -39,6 +39,9 @@
         public function put(string $key, $value) {
             $this->sessionData->$key = $value;
         }
+        public function getSessionId(){
+            return $this->sessionId;
+        }
 
         public function get(string $key, $defaultValue = null) {
             return $this->sessionData->$key ?? $defaultValue;
