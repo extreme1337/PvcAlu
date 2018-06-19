@@ -40,14 +40,10 @@ class __TwigTemplate_09688caa0a1896f53e9ed6ebf0fd56bf62f4059cdc60ba8b8d2114ffb72
         <a href=\"";
         // line 5
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/profile\">Dashboard</a>
-        <a href=\"";
-        // line 6
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "user/models\">Prikazi sve modele</a>
     </div>
 
-    <form class=\"models-form\" method=\"POST\">
+    <form class=\"models-form\" method=\"POST\" enctype=\"multipart/form-data\">
         <div>
             <label for=\"name\">Naziv: </label>
             <input type=\"text\" id=\"name\" name=\"name\" required>
@@ -70,11 +66,32 @@ class __TwigTemplate_09688caa0a1896f53e9ed6ebf0fd56bf62f4059cdc60ba8b8d2114ffb72
         </div>
         <div class=\"form-group\">
             <label for=\"picture\">Slika: </label>
-            <input type=\"file\" id=\"picture\" class=\"form-control\" name=\"picture\" accept=\"image/png\">
+            <input type=\"file\" id=\"picture\" class=\"form-control\" name=\"picture\" accept=\"image/jpeg\">
         </div>
-        <div>
-            <label for=\"profile\">Profil: </label>
-            <input type=\"number\" id=\"profile\" name=\"profile\" required>
+        <div class=\"form-group\">
+            <label for=\"profile_id\">Profil: </label>
+            <select class=\"form-control\" name=\"profile_id\" id=\"profile_id\">
+                    ";
+        // line 36
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["profiles"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["profile"]) {
+            // line 37
+            echo "                    <option value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["profile"], "profile_id", array()), "html", null, true);
+            echo "\">
+                        ";
+            // line 38
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["profile"], "name", array()), "html", null, true);
+            echo "
+                    </option>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['profile'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 41
+        echo "                </select>
         </div>
         <div>
             <button type=\"submit\">
@@ -98,7 +115,7 @@ class __TwigTemplate_09688caa0a1896f53e9ed6ebf0fd56bf62f4059cdc60ba8b8d2114ffb72
 
     public function getDebugInfo()
     {
-        return array (  46 => 6,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
+        return array (  94 => 41,  85 => 38,  80 => 37,  76 => 36,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

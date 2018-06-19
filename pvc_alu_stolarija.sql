@@ -11,7 +11,7 @@
  Target Server Version : 100131
  File Encoding         : 65001
 
- Date: 06/06/2018 23:31:17
+ Date: 17/06/2018 23:02:47
 */
 
 SET NAMES utf8mb4;
@@ -47,7 +47,7 @@ CREATE TABLE `cart`  (
   `session_number` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`cart_id`) USING BTREE,
   UNIQUE INDEX `uq_cart_session_number`(`session_number`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 442 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 457 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of cart
@@ -66,6 +66,12 @@ INSERT INTO `cart` VALUES (431, '2018-06-04 13:47:30', 'ZKoVgDXtBv1JH8J6V9crYY74
 INSERT INTO `cart` VALUES (433, '2018-06-04 20:21:28', '6WqGe425S4vxj1rCOJhrehUvs5AonP7N');
 INSERT INTO `cart` VALUES (436, '2018-06-05 20:51:16', '5rcFZz18iPgFKlvxyGU6sRZwzkyvNaFb');
 INSERT INTO `cart` VALUES (441, '2018-06-06 10:33:59', 'zOJl9ZJWvodw63umVNEartILkNwRFiy6');
+INSERT INTO `cart` VALUES (442, '2018-06-07 09:41:36', '5Jv4IqgSS4vFhZsQlSjn41WOLvJQeGLj');
+INSERT INTO `cart` VALUES (446, '2018-06-08 10:45:00', '9KTv934wY8SNZCjgBGWhDQAywL1acSuR');
+INSERT INTO `cart` VALUES (449, '2018-06-08 10:45:31', '1FLjsrEnxhmBa2vyTohpR0wJv5caFQWt');
+INSERT INTO `cart` VALUES (452, '2018-06-08 10:45:51', 'ZadrlYTsgu5FfDPNdIs6N9ToyiHzzjBj');
+INSERT INTO `cart` VALUES (455, '2018-06-08 10:46:58', 'd5FgC9JvrBNT8RjPMKYB3fKEU9RpaPfn');
+INSERT INTO `cart` VALUES (456, '2018-06-08 10:47:17', 'o1jkSXceuq64Y1WSkjOJoosIKcpKvtQX');
 
 -- ----------------------------
 -- Table structure for cart_model
@@ -83,7 +89,7 @@ CREATE TABLE `cart_model`  (
   INDEX `fk_cart_model_model_id`(`model_id`) USING BTREE,
   CONSTRAINT `fk_cart_model_cart_id` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_cart_model_model_id` FOREIGN KEY (`model_id`) REFERENCES `model` (`model_id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 53 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 71 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of cart_model
@@ -120,6 +126,24 @@ INSERT INTO `cart_model` VALUES (49, '2018-06-06 10:33:59', 3025.00, 441, 33, 0.
 INSERT INTO `cart_model` VALUES (50, '2018-06-06 10:34:12', 3025.00, 441, 33, 0.00);
 INSERT INTO `cart_model` VALUES (51, '2018-06-06 10:34:14', 3025.00, 441, 33, 0.00);
 INSERT INTO `cart_model` VALUES (52, '2018-06-06 11:30:38', 3025.00, 441, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (53, '2018-06-07 09:41:36', 3025.00, 442, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (54, '2018-06-07 09:41:41', 3025.00, 442, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (55, '2018-06-07 09:41:47', 4225.00, 442, 33, 42250.00);
+INSERT INTO `cart_model` VALUES (56, '2018-06-07 09:43:18', 4225.00, 442, 33, 42250.00);
+INSERT INTO `cart_model` VALUES (57, '2018-06-08 10:45:00', 3025.00, 446, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (58, '2018-06-08 10:45:04', 3025.00, 446, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (59, '2018-06-08 10:45:06', 3025.00, 446, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (60, '2018-06-08 10:45:31', 6000.00, 449, 37, 108000.00);
+INSERT INTO `cart_model` VALUES (61, '2018-06-08 10:45:36', 6000.00, 449, 37, 108000.00);
+INSERT INTO `cart_model` VALUES (62, '2018-06-08 10:45:38', 6000.00, 449, 37, 108000.00);
+INSERT INTO `cart_model` VALUES (63, '2018-06-08 10:45:51', 3025.00, 452, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (64, '2018-06-08 10:46:10', 3025.00, 452, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (65, '2018-06-08 10:46:16', 3025.00, 452, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (66, '2018-06-08 10:46:58', 3025.00, 455, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (67, '2018-06-08 10:47:17', 20615.00, 456, 18, 247380.00);
+INSERT INTO `cart_model` VALUES (68, '2018-06-08 10:47:48', 3025.00, 455, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (69, '2018-06-08 10:48:06', 2025.00, 455, 33, 20250.00);
+INSERT INTO `cart_model` VALUES (70, '2018-06-08 10:48:10', 2025.00, 455, 33, 20250.00);
 
 -- ----------------------------
 -- Table structure for category
@@ -189,51 +213,52 @@ CREATE TABLE `model`  (
   INDEX `fk_model_profile_id`(`profile_id`) USING BTREE,
   CONSTRAINT `fk_model_administrator_id` FOREIGN KEY (`administrator_id`) REFERENCES `administrator` (`administrator_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_model_profile_id` FOREIGN KEY (`profile_id`) REFERENCES `profile` (`profile_id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 63 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 64 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of model
 -- ----------------------------
-INSERT INTO `model` VALUES (1, 'PVC prozor jednokrilni', 45.00, 100.00, 45.00, 100.00, 1, 'assets/images/models/sistem300_slika_1.png', 1);
-INSERT INTO `model` VALUES (2, 'PVC prozor dvokrilni', 55.00, 123.00, 55.00, 123.00, 1, 'assets/images/models/sistem300_slika_2.png', 1);
-INSERT INTO `model` VALUES (3, 'PVC balkonska vrata jednokrilna', 100.00, 150.00, 145.00, 220.00, 2, 'assets/images/models/sistem300_slika_3.png', 1);
-INSERT INTO `model` VALUES (4, 'PVC balkonska vrata dvokrilna', 100.00, 150.00, 145.00, 230.00, 2, 'assets/images/models/sistem300_slika_4.png', 1);
-INSERT INTO `model` VALUES (6, 'PVC karolaj vrata jednokrilna sa 3D šarkom', 120.00, 220.00, 145.00, 230.00, 4, 'assets/images/models/sistem400_slika_1.png', 2);
-INSERT INTO `model` VALUES (7, 'PVC karolaj vrata dvokrilna sa 3D šarkom', 130.00, 200.00, 145.00, 230.00, 3, 'assets/images/models/sistem400_slika_2.png', 2);
-INSERT INTO `model` VALUES (8, 'PVC sobna vrata sa staklom', 115.00, 225.00, 145.00, 230.00, 2, 'assets/images/models/sistem400_slika_3.png', 2);
-INSERT INTO `model` VALUES (10, 'Pvc sobna vrata bez stakla', 100.00, 180.00, 145.00, 230.00, 1, 'assets/images/models/sistem400_slika_4.png', 2);
-INSERT INTO `model` VALUES (14, 'MR ECO PROZOR ARCADE\r\n\r\n1', 40.00, 100.00, 40.00, 100.00, 1, 'assets/images/models/profileM11000_slika_1.jpg', 8);
-INSERT INTO `model` VALUES (15, 'MR ECLUSIVE PROZOR PRESTIGE\r\n', 35.00, 110.00, 35.00, 100.00, 2, 'assets/images/models/profileM11000_slika_2.jpg', 8);
-INSERT INTO `model` VALUES (16, 'MR PREMIUM PROZOR EFORTE', 30.00, 100.00, 30.00, 100.00, 4, 'assets/images/models/profileM11000_slika_3.jpg', 8);
-INSERT INTO `model` VALUES (17, 'MR PREMIUM PROZOR EFORTE SA ALU PERSIJANIMA', 30.00, 111.00, 38.00, 115.00, 2, 'assets/images/models/profileM11000_slika_4.jpg', 8);
-INSERT INTO `model` VALUES (18, 'PVC ulazna vrata jednokrilna sa 3D šarkom', 120.00, 150.00, 145.00, 230.00, 4, 'assets/images/models/sistem500_slika_1.png', 3);
-INSERT INTO `model` VALUES (19, 'PVC ulazna vrata dvokrilna sa 3D šarkom', 120.00, 175.00, 145.00, 230.00, 3, 'assets/images/models/sistem500_slika_2.png', 3);
-INSERT INTO `model` VALUES (21, 'PVC ulazna vrata moderna linija', 120.00, 150.00, 145.00, 230.00, 2, 'assets/images/models/sistem500_slika_3.png', 3);
-INSERT INTO `model` VALUES (22, 'PVC ulazna vrata elegantna linija', 120.00, 150.00, 145.00, 230.00, 3, 'assets/images/models/sistem500_slika_4.png', 3);
-INSERT INTO `model` VALUES (25, 'LUX sigurnosna vrata', 120.00, 150.00, 145.00, 230.00, 1, 'assets/images/models/sistem600_slika_1.jpg', 4);
-INSERT INTO `model` VALUES (26, 'STANDARD Plus sigurnosna vrata', 120.00, 150.00, 145.00, 230.00, 2, 'assets/images/models/sistem600_slika_2.jpg', 4);
-INSERT INTO `model` VALUES (27, 'Classic Plus sigurnosna vrata', 120.00, 150.00, 145.00, 230.00, 3, 'assets/images/models/sistem600_slika_3.jpg', 4);
-INSERT INTO `model` VALUES (28, 'Standard sigurnosna vrata', 120.00, 150.00, 145.00, 230.00, 2, 'assets/images/models/sistem600_slika_4.jpg', 4);
-INSERT INTO `model` VALUES (29, 'Protivpožarna vrata - standard', 120.00, 150.00, 145.00, 230.00, 1, 'assets/images/models/sistem800_slika_1.jpg', 6);
-INSERT INTO `model` VALUES (30, 'Protivpožarna vrata - standard plus', 120.00, 150.00, 145.00, 230.00, 4, 'assets/images/models/sistem800_slika_2.jpg', 6);
-INSERT INTO `model` VALUES (31, 'Sigurnosna vrata - model Tal 2. brave', 120.00, 150.00, 145.00, 230.00, 3, 'assets/images/models/sistem800_slika_3.jpg', 6);
-INSERT INTO `model` VALUES (32, 'Ulazna vrata, T model', 120.00, 150.00, 145.00, 230.00, 2, 'assets/images/models/sistem800_slika_4.jpg', 6);
-INSERT INTO `model` VALUES (33, 'Prozor sa 3D šarkama', 45.00, 120.00, 45.00, 120.00, 1, 'assets/images/models/sistem800k_slika_1.jpg', 7);
-INSERT INTO `model` VALUES (34, 'Dvokrilni prozor sa komaricom', 50.00, 120.00, 50.00, 120.00, 2, 'assets/images/models/sistem800k_slika_2.jpg', 7);
-INSERT INTO `model` VALUES (35, 'Ulazna vrata', 120.00, 150.00, 145.00, 230.00, 3, 'assets/images/models/sistem800k_slika_3.jpg', 7);
-INSERT INTO `model` VALUES (36, 'Polukružni prozor sa 3D šarkama', 50.00, 120.00, 50.00, 130.00, 2, 'assets/images/models/sistem800k_slika_4.jpg', 7);
-INSERT INTO `model` VALUES (37, 'MR PREMIUM VRATA EFORTE standard', 60.00, 160.00, 100.00, 240.00, 3, 'assets/images/models/profileM904mini_slika_3.jpg', 11);
-INSERT INTO `model` VALUES (40, 'MR ECO VRATA ARCADE 1', 50.00, 120.00, 100.00, 230.00, 4, 'assets/images/models/profileM904mini_slika_1.jpg', 11);
-INSERT INTO `model` VALUES (44, 'MR ECO VRATA ARCADE 2', 50.00, 120.00, 100.00, 230.00, 3, 'assets/images/models/profileM904mini_slika_2.jpg', 11);
-INSERT INTO `model` VALUES (46, 'MR PREMIUM VRATA EFORTE', 60.00, 150.00, 100.00, 245.00, 1, 'assets/images/models/profileM904mini_slika_4.jpg', 11);
-INSERT INTO `model` VALUES (47, 'ALU ulazna vrata elegant', 50.00, 145.00, 130.00, 250.00, 1, 'assets/images/models/profileM9040soft_slika_4.jpg', 10);
-INSERT INTO `model` VALUES (49, 'ALU ulazna vrata standard 1', 50.00, 145.00, 130.00, 250.00, 2, 'assets/images/models/profileM9040soft_slika_2.jpg', 10);
-INSERT INTO `model` VALUES (51, 'ALU ulazna vrata standard 2', 50.00, 145.00, 130.00, 250.00, 1, 'assets/images/models/profileM9040soft_slika_1.jpg', 10);
-INSERT INTO `model` VALUES (55, 'ALU Sigurnosna vrata - model Tal', 50.00, 130.00, 115.00, 245.00, 4, 'assets/images/models/profileM9040soft_slika_3.jpg', 10);
-INSERT INTO `model` VALUES (56, 'MR ECO KLIZNI PROZOR ARCADE', 45.00, 90.00, 45.00, 90.00, 3, 'assets/images/models/profileM9050_slika_2.jpg', 12);
-INSERT INTO `model` VALUES (57, 'MR PREMIUM KLIZNI PROZOR EFORTE', 45.00, 90.00, 45.00, 90.00, 2, 'assets/images/models/profileM9050_slika_1.jpg', 12);
-INSERT INTO `model` VALUES (59, 'MR PREMIUM BALKONSKA KLIZNA VRATA EFORTE', 150.00, 345.00, 160.00, 280.00, 3, 'assets/images/models/profileM9050_slika_3.jpg', 12);
-INSERT INTO `model` VALUES (62, 'MR ECLUSIVE KLIZNA VRATA PRESTIGE ', 150.00, 345.00, 160.00, 280.00, 1, 'assets/images/models/profileM9050_slika_4.jpg', 12);
+INSERT INTO `model` VALUES (1, 'PVC prozor jednokrilni', 45.00, 100.00, 45.00, 100.00, 1, 'assets/images/models/sistem300_slika_1.jpg', 1);
+INSERT INTO `model` VALUES (2, 'PVC prozor dvokrilni', 55.00, 123.00, 55.00, 123.00, 1, 'assets/images/models/sistem300_slika_2.jpg', 1);
+INSERT INTO `model` VALUES (3, 'PVC balkonska vrata jednokrilna', 100.00, 150.00, 145.00, 220.00, 2, 'assets/images/models/sistem300_slika_3.jpg', 1);
+INSERT INTO `model` VALUES (4, 'PVC balkonska vrata dvokrilna', 100.00, 150.00, 145.00, 230.00, 2, 'assets/images/models/sistem300_slika_4.jpg', 1);
+INSERT INTO `model` VALUES (6, 'PVC karolaj vrata jednokrilna sa 3D šarkom', 120.00, 220.00, 145.00, 230.00, 4, 'assets/images/models/sistem400_slika_6.jpg', 2);
+INSERT INTO `model` VALUES (7, 'PVC karolaj vrata dvokrilna sa 3D šarkom', 130.00, 200.00, 145.00, 230.00, 3, 'assets/images/models/sistem400_slika_7.jpg', 2);
+INSERT INTO `model` VALUES (8, 'PVC sobna vrata sa staklom', 115.00, 225.00, 145.00, 230.00, 2, 'assets/images/models/sistem400_slika_8.jpg', 2);
+INSERT INTO `model` VALUES (10, 'Pvc sobna vrata bez stakla', 100.00, 180.00, 145.00, 230.00, 1, 'assets/images/models/sistem400_slika_10.jpg', 2);
+INSERT INTO `model` VALUES (14, 'MR ECO PROZOR ARCADE\r\n\r\n1', 40.00, 100.00, 40.00, 100.00, 1, 'assets/images/models/profilm11000aluthermplus_slika_14.jpg', 8);
+INSERT INTO `model` VALUES (15, 'MR ECLUSIVE PROZOR PRESTIGE\r\n', 35.00, 110.00, 35.00, 100.00, 2, 'assets/images/models/profilm11000aluthermplus_slika_15.jpg', 8);
+INSERT INTO `model` VALUES (16, 'MR PREMIUM PROZOR EFORTE', 30.00, 100.00, 30.00, 100.00, 4, 'assets/images/models/profilm11000aluthermplus_slika_16.jpg', 8);
+INSERT INTO `model` VALUES (17, 'MR PREMIUM PROZOR EFORTE SA ALU PERSIJANIMA', 30.00, 111.00, 38.00, 115.00, 2, 'assets/images/models/profilm11000aluthermplus_slika_17.jpg', 8);
+INSERT INTO `model` VALUES (18, 'PVC ulazna vrata jednokrilna sa 3D šarkom', 120.00, 150.00, 145.00, 230.00, 4, 'assets/images/models/sistem500_slika_18.jpg', 3);
+INSERT INTO `model` VALUES (19, 'PVC ulazna vrata dvokrilna sa 3D šarkom', 120.00, 175.00, 145.00, 230.00, 3, 'assets/images/models/sistem500_slika_19.jpg', 3);
+INSERT INTO `model` VALUES (21, 'PVC ulazna vrata moderna linija', 120.00, 150.00, 145.00, 230.00, 2, 'assets/images/models/sistem500_slika_21.jpg', 3);
+INSERT INTO `model` VALUES (22, 'PVC ulazna vrata elegantna linija', 120.00, 150.00, 145.00, 230.00, 3, 'assets/images/models/sistem500_slika_22.jpg', 3);
+INSERT INTO `model` VALUES (25, 'LUX sigurnosna vrata', 120.00, 150.00, 145.00, 230.00, 1, 'assets/images/models/sistem600_slika_25.jpg', 4);
+INSERT INTO `model` VALUES (26, 'STANDARD Plus sigurnosna vrata', 120.00, 150.00, 145.00, 230.00, 2, 'assets/images/models/sistem600_slika_26.jpg', 4);
+INSERT INTO `model` VALUES (27, 'Classic Plus sigurnosna vrata', 120.00, 150.00, 145.00, 230.00, 3, 'assets/images/models/sistem600_slika_27.jpg', 4);
+INSERT INTO `model` VALUES (28, 'Standard sigurnosna vrata', 120.00, 150.00, 145.00, 230.00, 2, 'assets/images/models/sistem600_slika_28.jpg', 4);
+INSERT INTO `model` VALUES (29, 'Protivpožarna vrata - standard', 120.00, 150.00, 145.00, 230.00, 1, 'assets/images/models/sistem800_slika_29.jpg', 6);
+INSERT INTO `model` VALUES (30, 'Protivpožarna vrata - standard plus', 120.00, 150.00, 145.00, 230.00, 4, 'assets/images/models/sistem800_slika_30.jpg', 6);
+INSERT INTO `model` VALUES (31, 'Sigurnosna vrata - model Tal 2. brave', 120.00, 150.00, 145.00, 230.00, 3, 'assets/images/models/sistem800_slika_31.jpg', 6);
+INSERT INTO `model` VALUES (32, 'Ulazna vrata, T model', 120.00, 150.00, 145.00, 230.00, 2, 'assets/images/models/sistem800_slika_32.jpg', 6);
+INSERT INTO `model` VALUES (33, 'Prozor sa 3D šarkama', 45.00, 120.00, 45.00, 120.00, 1, 'assets/images/models/sistem800k_slika_33.jpg', 7);
+INSERT INTO `model` VALUES (34, 'Dvokrilni prozor sa komaricom', 50.00, 120.00, 50.00, 120.00, 2, 'assets/images/models/sistem800k_slika_34.jpg', 7);
+INSERT INTO `model` VALUES (35, 'Ulazna vrata', 120.00, 150.00, 145.00, 230.00, 3, 'assets/images/models/sistem800k_slika_35.jpg', 7);
+INSERT INTO `model` VALUES (36, 'Polukružni prozor sa 3D šarkama', 50.00, 120.00, 50.00, 130.00, 2, 'assets/images/models/sistem800k_slika_36.jpg', 7);
+INSERT INTO `model` VALUES (37, 'MR PREMIUM VRATA EFORTE standard', 60.00, 160.00, 100.00, 240.00, 3, 'assets/images/models/profilem904mini_slika_37.jpg', 11);
+INSERT INTO `model` VALUES (40, 'MR ECO VRATA ARCADE 1', 50.00, 120.00, 100.00, 230.00, 4, 'assets/images/models/profilem904mini_slika_40.jpg', 11);
+INSERT INTO `model` VALUES (44, 'MR ECO VRATA ARCADE 2', 50.00, 120.00, 100.00, 230.00, 3, 'assets/images/models/profilem904mini_slika_44.jpg', 11);
+INSERT INTO `model` VALUES (46, 'MR PREMIUM VRATA EFORTE', 60.00, 150.00, 100.00, 245.00, 1, 'assets/images/models/profilem904mini_slika_46.jpg', 11);
+INSERT INTO `model` VALUES (47, 'ALU ulazna vrata elegant', 50.00, 145.00, 130.00, 250.00, 1, 'assets/images/models/profilem9040softlineplus_slika_47.jpg', 10);
+INSERT INTO `model` VALUES (49, 'ALU ulazna vrata standard 1', 50.00, 145.00, 130.00, 250.00, 2, 'assets/images/models/profilem9040softlineplus_slika_49.jpg', 10);
+INSERT INTO `model` VALUES (51, 'ALU ulazna vrata standard 2', 50.00, 145.00, 130.00, 250.00, 1, 'assets/images/models/profilem9040softlineplus_slika_51.jpg', 10);
+INSERT INTO `model` VALUES (55, 'ALU Sigurnosna vrata - model Tal', 50.00, 130.00, 115.00, 245.00, 4, 'assets/images/models/profilem9040softlineplus_slika_55.jpg', 10);
+INSERT INTO `model` VALUES (56, 'MR ECO KLIZNI PROZOR ARCADE', 45.00, 90.00, 45.00, 90.00, 3, 'assets/images/models/profilm9050klizni_slika_56.jpg', 12);
+INSERT INTO `model` VALUES (57, 'MR PREMIUM KLIZNI PROZOR EFORTE', 45.00, 90.00, 45.00, 90.00, 2, 'assets/images/models/profilm9050klizni_slika_57.jpg', 12);
+INSERT INTO `model` VALUES (59, 'MR PREMIUM BALKONSKA KLIZNA VRATA EFORTE', 150.00, 345.00, 160.00, 280.00, 3, 'assets/images/models/profilm9050klizni_slika_59.jpg', 12);
+INSERT INTO `model` VALUES (62, 'MR ECLUSIVE KLIZNA VRATA PRESTIGE ', 150.00, 345.00, 160.00, 280.00, 1, 'assets/images/models/profilm9050klizni_slika_62.jpg', 12);
+INSERT INTO `model` VALUES (63, 'pera', 123.00, 123.00, 123.00, 123.00, 3, '', 1);
 
 -- ----------------------------
 -- Table structure for model_view
@@ -249,7 +274,7 @@ CREATE TABLE `model_view`  (
   INDEX `fk_model_view_model_id`(`model_id`) USING BTREE,
   INDEX `model_view_ip_address_idx`(`ip_address`) USING BTREE,
   CONSTRAINT `fk_model_view_model_id` FOREIGN KEY (`model_id`) REFERENCES `model` (`model_id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 320 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 333 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of model_view
@@ -319,6 +344,19 @@ INSERT INTO `model_view` VALUES (316, '2018-06-06 11:09:17', 33, '::1', 'Mozilla
 INSERT INTO `model_view` VALUES (317, '2018-06-06 21:48:37', 15, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
 INSERT INTO `model_view` VALUES (318, '2018-06-06 21:59:30', 40, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
 INSERT INTO `model_view` VALUES (319, '2018-06-06 22:43:37', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
+INSERT INTO `model_view` VALUES (320, '2018-06-07 09:28:21', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
+INSERT INTO `model_view` VALUES (321, '2018-06-07 09:36:57', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
+INSERT INTO `model_view` VALUES (322, '2018-06-08 10:44:53', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36');
+INSERT INTO `model_view` VALUES (323, '2018-06-08 10:45:23', 37, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
+INSERT INTO `model_view` VALUES (324, '2018-06-08 10:45:44', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
+INSERT INTO `model_view` VALUES (325, '2018-06-08 10:46:05', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
+INSERT INTO `model_view` VALUES (326, '2018-06-08 10:46:55', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36');
+INSERT INTO `model_view` VALUES (327, '2018-06-08 10:47:09', 18, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36');
+INSERT INTO `model_view` VALUES (328, '2018-06-08 10:47:44', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36');
+INSERT INTO `model_view` VALUES (329, '2018-06-08 10:48:01', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36');
+INSERT INTO `model_view` VALUES (330, '2018-06-09 18:01:24', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
+INSERT INTO `model_view` VALUES (331, '2018-06-17 18:08:40', 36, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
+INSERT INTO `model_view` VALUES (332, '2018-06-17 18:13:06', 44, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
 
 -- ----------------------------
 -- Table structure for order_cart

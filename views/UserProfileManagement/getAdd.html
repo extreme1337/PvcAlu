@@ -12,19 +12,31 @@
         </div>
         <div class="form-group">
             <label for="picture">Slika: </label>
-            <input type="file" id="picture" class="form-control" name="picture" accept="image/png">
+            <input type="file" id="picture" class="form-control" name="picture" accept="image/jpeg">
         </div>
         <div>
             <label for="price_per_unit_area">Cena po povrsini: </label>
             <input type="text" id="price_per_unit_area" name="price_per_unit_area" required>
         </div>
-        <div>
-            <label for="category_id">Kategorija: </label>
-            <input type="number" id="category" name="category" required>
+        <div class="form-group">
+            <label for="category_id">Profil</label>
+            <select class="form-control" name="category_id" id="category_id">
+                    {% for category in categories %}
+                    <option value="{{ category.category_id }}">
+                        {{ category.name }}
+                    </option>
+                    {% endfor %}
+                </select>
         </div>
-        <div>
+        <div class="form-group">
             <label for="manufacturer_id">Proizvodjac: </label>
-            <input type="number" id="manufacturer" name="manufacturer" required>
+            <select class="form-control" name="manufacturer_id" id="manufacturer_id">
+                        {% for manufacturer in manufacturers %}
+                        <option value="{{ manufacturer.manufacturer_id }}">
+                            {{ manufacturer.name }}
+                        </option>
+                        {% endfor %}
+                    </select>
         </div>
         <div>
             <button type="submit">

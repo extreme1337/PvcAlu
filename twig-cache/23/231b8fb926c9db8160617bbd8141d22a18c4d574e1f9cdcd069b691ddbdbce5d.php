@@ -75,7 +75,10 @@ class __TwigTemplate_2ed7326df0cb6b7aa2f535c97a24cdee5cd145c461247f5797141afa85f
             echo " RSD </p>
                     </td>
                     <td>
-                        <button type=\"button\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></button>
+                        <button type=\"button\" value=\"";
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["cartModel"] ?? null), "cart_model_id", array()), "html", null, true);
+            echo "\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></button>
                     </td>
                     ";
         }
@@ -126,7 +129,7 @@ class __TwigTemplate_2ed7326df0cb6b7aa2f535c97a24cdee5cd145c461247f5797141afa85f
 
     public function getDebugInfo()
     {
-        return array (  110 => 49,  101 => 45,  86 => 32,  74 => 26,  68 => 23,  62 => 22,  57 => 19,  53 => 18,  35 => 2,  15 => 1,);
+        return array (  113 => 49,  104 => 45,  89 => 32,  80 => 29,  74 => 26,  68 => 23,  62 => 22,  57 => 19,  53 => 18,  35 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

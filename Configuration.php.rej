@@ -1,0 +1,8 @@
+diff a/Configuration.php b/Configuration.php	(rejected hunks)
+@@ -14,4 +14,6 @@
+         const FINGERPRINT_PROVIDER_FACTORY = '\\App\\Core\\Fingerprint\\BasicFingerprintProviderFactory';
+         const FINGERPRINT_PROVIDER_METHOD  = 'getInstance';
+         const FINGERPRINT_PROVIDER_ARGS    = [ 'SERVER' ];
++    
++        const UPLOAD_DIR = 'assets/images/models/';
+     }

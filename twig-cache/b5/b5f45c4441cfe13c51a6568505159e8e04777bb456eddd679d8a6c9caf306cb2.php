@@ -43,18 +43,18 @@ class __TwigTemplate_e7409aa749a64573bde28f0480cd63fece87a59d1bdb4ef85c2d76141c5
         echo "user/categories\">Prikazi sve kategorije</a>
     </div>
 
-    <form class=\"category-form\" method=\"POST\">
+    <form class=\"category-form\" method=\"POST\" enctype=\"multipart/form-data\">
         <div class=\"form-group\">
             <label for=\"name\">Naziv: </label>
             <input type=\"text\" id=\"name\" name=\"name\" required>
         </div>
         <div class=\"form-group\">
             <label for=\"picture\">Slika: </label>
-            <input type=\"file\" id=\"picture\" class=\"form-control\" name=\"picture\" accept=\"image/png\">
+            <input type=\"file\" id=\"picture\" class=\"form-control\" name=\"picture\" accept=\"image/jpeg\">
         </div>
         <div class=\"form-group\">
             <label for=\"description\">Opis: </label>
-            <input type=\"text\" id=\"description\" name=\"description\" required>
+            <textarea type=\"text\" id=\"description\" name=\"description\" required rows=\"10\"></textarea>
         </div>
 
         <div class=\"form-control\">

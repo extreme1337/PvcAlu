@@ -48,33 +48,69 @@ class __TwigTemplate_e2ebcdcfb3356e81e7c9fd9b36f2b9c22a449449364ab9b4be8369458a1
     </div>
 
     <form class=\"model-form\" method=\"POST\" enctype=\"multipart/form-data\">
-        <div>
+        <div class=\"form-group\">
             <label for=\"name\">Naziv: </label>
-            <input type=\"text\" id=\"name\" name=\"name\" required>
+            <input type=\"text\" id=\"name\" name=\"name\" value=\"";
+        // line 12
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "name", array()), "html", null, true);
+        echo "\" required>
         </div>
-        <div>
+        <div class=\"form-group\">
             <label for=\"min_width\">Minimalna sirina: </label>
-            <input type=\"text\" id=\"min_width\" name=\"min_width\" required>
+            <input type=\"text\" id=\"min_width\" name=\"min_width \" value=\"";
+        // line 16
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "min_width", array()), "html", null, true);
+        echo "\" required>
         </div>
-        <div>
+        <div class=\"form-group\">
             <label for=\"max_width\">Maksimalna sirina: </label>
-            <input type=\"text\" id=\"max_width\" name=\"max_width\" required>
+            <input type=\"text\" id=\"max_width\" name=\"max_width\" value=\"";
+        // line 20
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "max_width", array()), "html", null, true);
+        echo "\" required>
         </div>
-        <div>
+        <div class=\"form-group\">
             <label for=\"min_height\">Minimalna visina: </label>
-            <input type=\"text\" id=\"min_height\" name=\"min_height\" required>
+            <input type=\"text\" id=\"min_height\" name=\"min_height\" value=\"";
+        // line 24
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "min_height", array()), "html", null, true);
+        echo "\" required>
         </div>
-        <div>
+        <div class=\"form-group\">
             <label for=\"max_height\">Maksimalna visina: </label>
-            <input type=\"text\" id=\"max_height\" name=\"max_height\" required>
+            <input type=\"text\" id=\"max_height\" name=\"max_height\" value=\"";
+        // line 28
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["model"] ?? null), "max_height", array()), "html", null, true);
+        echo "\" required>
         </div>
         <div class=\"form-group\">
             <label for=\"picture\">Slika: </label>
-            <input type=\"file\" id=\"picture\" class=\"form-control\" name=\"picture\" accept=\"image/png\">
+            <input type=\"file\" id=\"picture\" class=\"form-control\" name=\"picture\" accept=\"image/jpeg\">
         </div>
-        <div>
-            <label for=\"profile\">Proizvodjac: </label>
-            <input type=\"number\" id=\"profile\" name=\"profile\" required>
+        <div class=\"form-group\">
+            <label for=\"profile\">Profil: </label>
+            <select class=\"form-control\" name=\"profile_id\" id=\"profile_id\">
+                ";
+        // line 37
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["profiles"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["profile"]) {
+            // line 38
+            echo "                <option value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["profile"], "profile_id", array()), "html", null, true);
+            echo "\">
+                    ";
+            // line 39
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["profile"], "name", array()), "html", null, true);
+            echo "
+                </option>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['profile'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 42
+        echo "            </select>
         </div>
         <div>
             <button type=\"submit\">
@@ -98,7 +134,7 @@ class __TwigTemplate_e2ebcdcfb3356e81e7c9fd9b36f2b9c22a449449364ab9b4be8369458a1
 
     public function getDebugInfo()
     {
-        return array (  46 => 6,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
+        return array (  113 => 42,  104 => 39,  99 => 38,  95 => 37,  83 => 28,  76 => 24,  69 => 20,  62 => 16,  55 => 12,  46 => 6,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

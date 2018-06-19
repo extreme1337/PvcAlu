@@ -11,6 +11,7 @@
         public function getEdit($manufacturId) {
             $manufacturModel = new \App\Models\ManufacturerModel($this->getDatabaseConnection());
             $manufacturer = $manufacturModel->getById($manufacturId);
+            $this->set('manufacturer',$manufacturer);
 
             if (!$manufacturer) {
                 $this->redirect(\Configuration::BASE . 'user/manufacturers');

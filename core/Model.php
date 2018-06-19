@@ -232,7 +232,7 @@
         }
 
         final public function editById(int $id, array $data) {
-            $this->checkFieldList($data);
+            #$this->checkFieldList($data);
 
             $tableName = $this->getTableName();
 

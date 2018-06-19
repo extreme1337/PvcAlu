@@ -11,6 +11,7 @@
         \App\core\Route::get('|^profile/([0-9]+)/?$|',                  'Profile',                      'show'),
         \App\core\Route::get('|^profile/model/([0-9]+)/?$|',            'Model',                        'show'),
         \App\core\Route::get('|^cart/?$|',                              'Cart',                         'show'),
+        \App\core\Route::get('|^cart/?$|',                              'Cart',                         'deleteById'),
         \App\Core\Route::get('|^cart/order/?$|',                        'Cart',                         'orderFromCart'),
         \App\Core\Route::post('|^cart/order/?$|',                       'Cart',                         'postOrderFromCart'),
         \App\core\Route::get('|^model/add/([0-9]+)/?$|',                'Model',                        'addToCart'),

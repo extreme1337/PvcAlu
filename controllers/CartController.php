@@ -10,20 +10,16 @@ class CartController extends \App\core\Controller{
         $this->set('categories',$categories);
         
         $sessionId = $this->getSessionId();
-        $cartModelModel = new \App\models\CartModelModel($this->getDatabaseConnection());
-        
 
         $orderCartModel = new \App\models\CartModelModel($this->getDatabaseConnection());
         $order = $orderCartModel->selectTableInnerJoin($sessionId);
         $this->set('cartModelModel', $order);
         
-        //$orderLength = sizeof($order);
-        //for($i = 0 ; $i<$orderLength ; $i++){  
-            //print_r($order[$i]['cart_model_id']);
-            //exit;                  
-            //if(isset($_REQUEST['delete'])){
-                //$order->deleteById($order[$i]['cart_model_id']);            
-            //}
+        $cartModel = $orderCartModel->getAll();
+        $this->set('cartModel',$cartModel);
+        $deleteById = \filter_input(INPUT_POST,'cart_model_id', FILTER_SANITIZE_NUMBER_INT);
+        //$deleteModelFromCart = $orderCartModel->deleteById($deleteById);
+        
         }
                 
 
@@ -50,10 +46,10 @@ class CartController extends \App\core\Controller{
         $this->set('modelsInCart',$modelsInCart);
 
         
-        $forename = \filter_input(INPUT_POST,'forename');
-        $surename = \filter_input(INPUT_POST,'surename');
-        $residential_address = \filter_input(INPUT_POST,'residential_address');
-        $email = \filter_input(INPUT_POST,'email');
+        $forename = \filter_input(INPUT_POST,'forename', FILTER_SANITIZE_STRING);
+        $surename = \filter_input(INPUT_POST,'surename', FILTER_SANITIZE_STRING);
+        $residential_address = \filter_input(INPUT_POST,'residential_address', FILTER_SANITIZE_STRING);
+        $email = \filter_input(INPUT_POST,'email', FILTER_SANITIZE_STRING);
         $cartModel = new \App\models\CartModel($this->getDatabaseConnection());
         $cartId = (array)$cartModel->getByFieldName('session_number',$this->getSessionId());
         

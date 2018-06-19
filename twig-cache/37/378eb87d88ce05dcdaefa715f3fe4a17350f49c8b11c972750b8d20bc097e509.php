@@ -47,8 +47,8 @@ class __TwigTemplate_95459c2fc37ef2e57ba311f7260a1dd662631668155c6f74e303fe9b385
         echo "user/manufacturers/add\">Dodaj novog proizvodjaca</a>
     </div>
 
-    <form class=\"manufacturer-form\" method=\"POST\">
-        <div>
+    <form class=\"manufacturer-form\" method=\"POST\" enctype=\"multipart/form-data\">
+        <div class=\"form-group\">
             <label for=\"name\">Naziv: </label>
             <input type=\"text\" id=\"name\" name=\"name\" value=\"";
         // line 12
@@ -56,7 +56,7 @@ class __TwigTemplate_95459c2fc37ef2e57ba311f7260a1dd662631668155c6f74e303fe9b385
         echo "\">
         </div>
 
-        <div>
+        <div class=\"form-group\">
             <button type=\"submit\">
                 Izmeni proizvodjaca
             </button>

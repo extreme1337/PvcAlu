@@ -47,26 +47,74 @@ class __TwigTemplate_47f80d8278bbcf142a4ad289ef8f6b5c305e78adffcb516c076dc341ef1
         echo "user/profiles/add\">Dodaj novi profil</a>
     </div>
 
-    <form class=\"profile-form\" method=\"POST\">
+    <form class=\"profile-form\" method=\"POST\" enctype=\"multipart/form-data\">
         <div>
             <label for=\"name\">Naziv: </label>
-            <input type=\"text\" id=\"name\" name=\"name\" required>
+            <input type=\"text\" id=\"name\" name=\"name\" value=\"";
+        // line 12
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "name", array()), "html", null, true);
+        echo "\" required>
         </div>
-        <div>
+        <div class=\"form-group\">
             <label for=\"picture\">Slika: </label>
-            <input type=\"text\" id=\"picture\" name=\"picture\" required>
+            <input type=\"file\" id=\"picture\" class=\"form-control\" name=\"picture\" accept=\"image/jpeg\">
         </div>
         <div>
             <label for=\"price_per_unit_area\">Cena po povrsini: </label>
-            <input type=\"number\" id=\"price_per_unit_area\" name=\"price_per_unit_area\" required>
+            <input type=\"number\" id=\"price_per_unit_area\" name=\"price_per_unit_area\" value=\"";
+        // line 20
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "price_per_unit_area", array()), "html", null, true);
+        echo "\" required>
         </div>
-        <div>
-            <label for=\"category\">Kategorija: </label>
-            <input type=\"number\" id=\"category\" name=\"category\" required>
+        <div class=\"form-group\">
+            <label for=\"category_id\">Profil</label>
+            <select class=\"form-control\" name=\"category_id\" id=\"category_id\">
+                        ";
+        // line 25
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+            // line 26
+            echo "                        <option value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", array()), "html", null, true);
+            echo "\">
+                            ";
+            // line 27
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()), "html", null, true);
+            echo "
+                        </option>
+                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 30
+        echo "                    </select>
         </div>
-        <div>
-            <label for=\"manufacturer\">Proizvodjac: </label>
-            <input type=\"number\" id=\"manufacturer\" name=\"manufacturer\" required>
+        <div class=\"form-group\">
+            <label for=\"manufacturer_id\">Proizvodjac: </label>
+            <select class=\"form-control\" name=\"manufacturer_id\" id=\"manufacturer_id\">
+                            ";
+        // line 35
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["manufacturers"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["manufacturer"]) {
+            // line 36
+            echo "                            <option value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["manufacturer"], "manufacturer_id", array()), "html", null, true);
+            echo "\">
+                                ";
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["manufacturer"], "name", array()), "html", null, true);
+            echo "
+                            </option>
+                            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['manufacturer'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 40
+        echo "                        </select>
         </div>
         <div>
             <button type=\"submit\">
@@ -90,7 +138,7 @@ class __TwigTemplate_47f80d8278bbcf142a4ad289ef8f6b5c305e78adffcb516c076dc341ef1
 
     public function getDebugInfo()
     {
-        return array (  46 => 6,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
+        return array (  117 => 40,  108 => 37,  103 => 36,  99 => 35,  92 => 30,  83 => 27,  78 => 26,  74 => 25,  66 => 20,  55 => 12,  46 => 6,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

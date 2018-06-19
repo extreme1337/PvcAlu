@@ -15,5 +15,5 @@
         const FINGERPRINT_PROVIDER_METHOD  = 'getInstance';
         const FINGERPRINT_PROVIDER_ARGS    = [ 'SERVER' ];
     
-        const UPLOAD_DIR = 'assets/images/models/';
+        const UPLOAD_DIR = 'assets/images/';
     }

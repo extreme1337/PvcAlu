@@ -74,7 +74,7 @@ class __TwigTemplate_770403e8ab37cfb7da7a9e5c4040ac639ead51971572302c48f9e5e4b40
             <p>Cena po povrsini profila: ";
             // line 16
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["profile"], "price_per_unit_area", array()), "html", null, true);
-            echo "</p>
+            echo " RSD</p>
         </div>
     </div>
     ";

@@ -25,18 +25,24 @@
             $categoryModel = $this->getEdit($categoryId);
 
             $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-            $picture = filter_input(INPUT_POST,'picture',FILTER_SANITIZE_STRING);
             $description = filter_input(INPUT_POST,'description',FILTER_SANITIZE_STRING);
             
-
-            $categoryModel->editById($categoryId, [
+            $string = str_replace(' ','',strtolower($name));
+            $string1 = $string.'.jpg';
+            
+            $uploadStatus = $this->doImageUpload('picture',$string);
+            $picture = \Configuration::UPLOAD_DIR.$string1;
+            $categoryId = $categoryModel->add([
                 'name' => $name,
                 'picture' => $picture,
                 'description' => $description,
                 'administrator_id' => $this->getSession()->get('administrator_id')
             ]);
 
-            $this->redirect(\Configuration::BASE . 'user/categories');
+            if ($categoryId) {
+                $this->redirect(\Configuration::BASE . 'user/categories');
+            }
+            $this->redirect(\Configuration::BASE.'user/profile');
         }
 
         public function getAdd() {
@@ -49,10 +55,16 @@
             $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 
             $categoryModel = new \App\Models\CategoryModel($this->getDatabaseConnection());
-            $picture = filter_input(INPUT_POST,'picture',FILTER_SANITIZE_STRING);
+            
             $description = filter_input(INPUT_POST,'description',FILTER_SANITIZE_STRING);
             
             
+            
+            $string = str_replace(' ','',strtolower($name));
+            $string1 = $string.'.jpg';
+            
+            $uploadStatus = $this->doImageUpload('picture',$string);
+            $picture = \Configuration::UPLOAD_DIR.$string1;
             $categoryId = $categoryModel->add([
                 'name' => $name,
                 'picture' => $picture,
@@ -65,5 +77,23 @@
             }
 
             $this->set('message', 'Doslo je do greske: Nije moguce dodati ovu kategoriju!');
+        }
+
+        private function doImageUpload(string $fieldName, string $fileName) : bool{
+            unlink(\Configuration::UPLOAD_DIR.$fileName.'.jpg');
+            $uploadPath = new \Upload\Storage\FileSystem(\Configuration::UPLOAD_DIR);
+            $file = new \Upload\File($fieldName, $uploadPath);
+            $file->setName($fileName);
+            $file->addValidations([
+                new \Upload\Validation\Mimetype("image/jpeg")
+            ]);
+
+            try{
+                $file->upload();
+                return true;
+            }catch(Exception $e){
+                $this->set('message', 'Greska '.\implode(', ',$file->getErrors()));
+                return false;
+            }
         }
     }

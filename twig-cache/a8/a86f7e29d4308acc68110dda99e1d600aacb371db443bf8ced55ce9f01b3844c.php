@@ -47,7 +47,7 @@ class __TwigTemplate_1cbdcbff0f5f482a65c9d6971ebb2ace5359b18e9b140ba2cac957517f6
         echo "user/categories/add\">Dodaj novu kategoriju</a>
     </div>
 
-    <form class=\"category-form\" method=\"POST\">
+    <form class=\"category-form\" method=\"POST\" enctype=\"multipart/form-data\">
         <div class=\"form-group\">
             <label for=\"name\">Naziv: </label>
             <input type=\"text\" id=\"name\" name=\"name\" value=\"";
@@ -57,11 +57,14 @@ class __TwigTemplate_1cbdcbff0f5f482a65c9d6971ebb2ace5359b18e9b140ba2cac957517f6
         </div>
         <div class=\"form-group\">
             <label for=\"picture\">Slika: </label>
-            <input type=\"file\" id=\"picture\" class=\"form-control\" name=\"picture\" accept=\"image/png\">
+            <input type=\"file\" id=\"picture\" class=\"form-control\" name=\"picture\" accept=\"image/jpeg\">
         </div>
         <div class=\"form-group\">
             <label for=\"description\">Opis: </label>
-            <input type=\"text\" id=\"description\" name=\"description\" required>
+            <textarea type=\"text\" id=\"description\" name=\"description\" required rows=\"10\">";
+        // line 20
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "description", array()), "html", null, true);
+        echo "</textarea>
         </div>
         <div class=\"form-group\">
             <button type=\"submit\">
@@ -85,7 +88,7 @@ class __TwigTemplate_1cbdcbff0f5f482a65c9d6971ebb2ace5359b18e9b140ba2cac957517f6
 
     public function getDebugInfo()
     {
-        return array (  55 => 12,  46 => 6,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
+        return array (  66 => 20,  55 => 12,  46 => 6,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()
