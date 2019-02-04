@@ -16,4 +16,10 @@
         const FINGERPRINT_PROVIDER_ARGS    = [ 'SERVER' ];
     
         const UPLOAD_DIR = 'assets/images/';
+
+        const MAIL_HOST = 'smtp.gmail.com';
+        const MAIL_PORT = '587';
+        const MAIL_PROTOCOL = 'tls';
+        const MAIL_USERNAME = 'alointernetbre@gmail.com';
+        const MAIL_PASSWORd = 'Genius1122';
     }

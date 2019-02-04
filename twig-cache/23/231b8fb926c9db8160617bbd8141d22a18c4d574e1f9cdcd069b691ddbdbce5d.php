@@ -75,17 +75,22 @@ class __TwigTemplate_2ed7326df0cb6b7aa2f535c97a24cdee5cd145c461247f5797141afa85f
             echo " RSD </p>
                     </td>
                     <td>
-                        <button type=\"button\" value=\"";
+                        <form action=\"";
             // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["cartModel"] ?? null), "cart_model_id", array()), "html", null, true);
-            echo "\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></button>
+            echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+            echo "cart/\" method=\"POST\">
+                            <button type=\"submit\" for=\"cart_model_id\" name=\"cart_model_id\" id=\"cart_model_id\" value=\"";
+            // line 30
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "cart_model_id", array()), "html", null, true);
+            echo "\" class=\"cart_model_id btn btn-danger\"><i class=\"fa fa-trash\"></i></button>
+                        </form>
                     </td>
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['model'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
+        // line 34
         echo "
 
                 </tr>
@@ -100,7 +105,7 @@ class __TwigTemplate_2ed7326df0cb6b7aa2f535c97a24cdee5cd145c461247f5797141afa85f
     </div>
 </div>
 <form action=\"";
-        // line 45
+        // line 47
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "cart/order/\" class=\"text-center\">
     <button type=\"submit\" class=\"btn btn-primary\">Naruci proizvode</button>
@@ -109,7 +114,7 @@ class __TwigTemplate_2ed7326df0cb6b7aa2f535c97a24cdee5cd145c461247f5797141afa85f
 ";
     }
 
-    // line 49
+    // line 51
     public function block_naslov($context, array $blocks = array())
     {
         echo " ";
@@ -129,7 +134,7 @@ class __TwigTemplate_2ed7326df0cb6b7aa2f535c97a24cdee5cd145c461247f5797141afa85f
 
     public function getDebugInfo()
     {
-        return array (  113 => 49,  104 => 45,  89 => 32,  80 => 29,  74 => 26,  68 => 23,  62 => 22,  57 => 19,  53 => 18,  35 => 2,  15 => 1,);
+        return array (  118 => 51,  109 => 47,  94 => 34,  84 => 30,  80 => 29,  74 => 26,  68 => 23,  62 => 22,  57 => 19,  53 => 18,  35 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

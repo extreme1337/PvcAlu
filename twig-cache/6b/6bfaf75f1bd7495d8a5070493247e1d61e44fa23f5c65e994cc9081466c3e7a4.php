@@ -32,15 +32,10 @@ class __TwigTemplate_d556e64882df394f53e77cf48dd7839f3660f66265fd3bfbe4e36467f31
     {
         // line 2
         echo "<div>
-    <p>";
+    <h4 class=\"text-center\">";
         // line 3
         echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
-        echo "</p>
-
-    <p>Klikni <a href=\"";
-        // line 5
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "\">ovde</a> da se vratiš nazad.</p>
+        echo "</h4>
 </div>
 ";
     }
@@ -57,7 +52,7 @@ class __TwigTemplate_d556e64882df394f53e77cf48dd7839f3660f66265fd3bfbe4e36467f31
 
     public function getDebugInfo()
     {
-        return array (  42 => 5,  37 => 3,  34 => 2,  15 => 1,);
+        return array (  37 => 3,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

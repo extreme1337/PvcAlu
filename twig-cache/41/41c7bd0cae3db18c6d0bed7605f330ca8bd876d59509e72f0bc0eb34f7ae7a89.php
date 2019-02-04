@@ -39,7 +39,7 @@ class __TwigTemplate_1791825d80ee271f38ccf04d840cc26a41f5036e967749a19d4732c244e
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "name", array()));
         echo "
     </h1>
-    <p class=\"text-center\">Spisak modela napravljenih od ovog profila: </p>
+    <h3 class=\"text-center\">Spisak modela napravljenih od ovog profila: </h3>
     <div class=\"row\">
 
         ";
@@ -49,19 +49,20 @@ class __TwigTemplate_1791825d80ee271f38ccf04d840cc26a41f5036e967749a19d4732c244e
         foreach ($context['_seq'] as $context["_key"] => $context["model"]) {
             // line 10
             echo "        <div class=\"card col-12 col-sm-12 col-md-6 text-center\">
-            <h3>";
-            // line 11
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "name", array()));
-            echo "</h3>
+
             <a href=\"";
             // line 12
             echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
             echo "profile/model/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "model_id", array()), "html", null, true);
             echo "\">
+                <h3>";
+            // line 13
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "name", array()));
+            echo "</h3>
                 <br>
                 <img src=\"";
-            // line 14
+            // line 15
             echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["model"], "picture", array()), "html", null, true);
             echo "\" alt=\"";
@@ -74,13 +75,13 @@ class __TwigTemplate_1791825d80ee271f38ccf04d840cc26a41f5036e967749a19d4732c244e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['model'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 18
+        // line 19
         echo "    </div>
 </div>
 ";
     }
 
-    // line 20
+    // line 21
     public function block_naslov($context, array $blocks = array())
     {
         echo " ";
@@ -100,7 +101,7 @@ class __TwigTemplate_1791825d80ee271f38ccf04d840cc26a41f5036e967749a19d4732c244e
 
     public function getDebugInfo()
     {
-        return array (  84 => 20,  78 => 18,  65 => 14,  58 => 12,  54 => 11,  51 => 10,  47 => 9,  39 => 4,  35 => 2,  15 => 1,);
+        return array (  85 => 21,  79 => 19,  66 => 15,  61 => 13,  55 => 12,  51 => 10,  47 => 9,  39 => 4,  35 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

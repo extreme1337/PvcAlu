@@ -1,0 +1,45 @@
+{% extends "_global/index.html" %} {% block main %} {% spaceless %}
+<div class="container">
+    <div class="row">
+        <a href="{{BASE}}user/profile" class="col-4 col-xs-4 col-md-4  text-center dash">Nazad na Dashboard</a>
+        <a href="{{BASE}}user/orders" class="col-8 col-xs-8 col-md-8 text-center dash">Prikazi porudzbine</a>
+    </div>
+
+    <form method="post" class="col col-md-10 offset-md-1 card">
+        <div class="card-header">
+            <h2 class="text-center">Porudzbina:</h2>
+        </div>
+
+
+        <div class="card-body">
+            {%for odobri in odobravanje%}
+            <div class="form-group">
+                <label>Ime:</label> {{odobri.forename}}
+            </div>
+            <div class="form-group">
+                <label>Prezime:</label> {{odobri.surname}}
+            </div>
+            <div class="form-group">
+                <label>Adresa stanovanja:</label> {{odobri.residential_address}}
+            </div>
+            <div class="form-group">
+                <label>Elektronska posta:</label> {{odobri.email}}
+            </div>
+            <div class="form-group">
+                <label>Proizvodi: </label>
+                <p>{% for proizvodi in modeli %}{{proizvodi.name}}{% endfor %}</p>
+            </div>{% endfor %}
+
+            <select class="form-control" name="proces" id="proces">
+                    <option value="odobrena">Odobri</option>
+                    <option value="odbijena">Odbij</option>
+                </select>
+
+        </div>
+
+
+        <div class="card-footer text-center"> <button type="submit" class="btn btn-primary">Posalji</button></div>
+    </form>
+</div>
+
+{% endspaceless %} {% endblock %}

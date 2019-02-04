@@ -30,48 +30,48 @@ class __TwigTemplate_09076d666e7344cea1000ba4628c94bb036c0d2da4097afd080580a8e82
 
     public function block_main($context, array $blocks = array())
     {
+        echo " ";
+        ob_start();
         // line 2
-        echo "<div>
-    <div class=\"options\">
-        <a href=\"";
-        // line 4
+        echo "<a href=\"";
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "user/profile\">Dashboard</a>
-        <a href=\"";
-        // line 5
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/categories/add\">Dodaj novu kategoriju</a>
-    </div>
-
-    <div class=\"categories\">
-        <ul>
-            ";
-        // line 10
+<form class=\"delete-form\" method=\"post\">
+    <div class=\"form-group\">
+        <label for=\"category_id\">Kategorija: </label>
+        <select class=\"form-control\" name=\"category_id\" id=\"category_id\">
+                ";
+        // line 7
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 11
-            echo "            <li>
-                <a href=\"";
-            // line 12
-            echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-            echo "user/categories/edit/";
+            // line 8
+            echo "                <option value=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", array()), "html", null, true);
             echo "\">
                     ";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()));
+            // line 9
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()), "html", null, true);
             echo "
-                </a> ";
+                </option>
+                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 15
-        echo "        </ul>
+        // line 12
+        echo "            </select>
     </div>
-</div>
+    <div>
+        <button type=\"submit\">
+            Obrisi kategoriju
+        </button>
+    </div>
+</form>
 ";
+        echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
+        // line 20
+        echo " ";
     }
 
     public function getTemplateName()
@@ -86,7 +86,7 @@ class __TwigTemplate_09076d666e7344cea1000ba4628c94bb036c0d2da4097afd080580a8e82
 
     public function getDebugInfo()
     {
-        return array (  71 => 15,  63 => 13,  57 => 12,  54 => 11,  50 => 10,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
+        return array (  74 => 20,  63 => 12,  54 => 9,  49 => 8,  45 => 7,  36 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

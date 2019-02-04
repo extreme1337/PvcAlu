@@ -11,7 +11,7 @@
  Target Server Version : 100131
  File Encoding         : 65001
 
- Date: 17/06/2018 23:02:47
+ Date: 21/06/2018 12:39:44
 */
 
 SET NAMES utf8mb4;
@@ -47,7 +47,7 @@ CREATE TABLE `cart`  (
   `session_number` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`cart_id`) USING BTREE,
   UNIQUE INDEX `uq_cart_session_number`(`session_number`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 457 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 476 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of cart
@@ -72,6 +72,15 @@ INSERT INTO `cart` VALUES (449, '2018-06-08 10:45:31', '1FLjsrEnxhmBa2vyTohpR0wJ
 INSERT INTO `cart` VALUES (452, '2018-06-08 10:45:51', 'ZadrlYTsgu5FfDPNdIs6N9ToyiHzzjBj');
 INSERT INTO `cart` VALUES (455, '2018-06-08 10:46:58', 'd5FgC9JvrBNT8RjPMKYB3fKEU9RpaPfn');
 INSERT INTO `cart` VALUES (456, '2018-06-08 10:47:17', 'o1jkSXceuq64Y1WSkjOJoosIKcpKvtQX');
+INSERT INTO `cart` VALUES (457, '2018-06-18 21:03:14', 'aRK7aww8ekcXCnBatYE8q79IvfqJqrb7');
+INSERT INTO `cart` VALUES (458, '2018-06-19 10:02:09', 'OcGxU1ZztM1eHSVdS3kJ0pIJluHprfCa');
+INSERT INTO `cart` VALUES (462, '2018-06-19 10:03:51', 'IgRJQHZW8GHlmpG0ppERGo2ECD3PRtMe');
+INSERT INTO `cart` VALUES (463, '2018-06-19 10:04:29', 'u8s5oTFeVrOQ1ubkCiqiRKyMkQ1pFCW0');
+INSERT INTO `cart` VALUES (464, '2018-06-19 10:07:47', 'sE5uprPSzboJqySyNBJn1zEDIw6FXG4j');
+INSERT INTO `cart` VALUES (467, '2018-06-19 23:20:32', '0gQCeDhFaJUUXiMTfhMTasVcVqlgykX1');
+INSERT INTO `cart` VALUES (471, '2018-06-20 07:55:07', 'cZJ8MWxGaZTIHPCoi0Iytqydwc6hB1Xu');
+INSERT INTO `cart` VALUES (472, '2018-06-20 22:34:41', 'aAtoDEOcCnGCaCoqkIzCrcPr4ufCFlkE');
+INSERT INTO `cart` VALUES (475, '2018-06-21 08:04:22', 'FWdBXS1TgSfF0wWaIleZ6qSrjLYaaEJe');
 
 -- ----------------------------
 -- Table structure for cart_model
@@ -89,7 +98,7 @@ CREATE TABLE `cart_model`  (
   INDEX `fk_cart_model_model_id`(`model_id`) USING BTREE,
   CONSTRAINT `fk_cart_model_cart_id` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_cart_model_model_id` FOREIGN KEY (`model_id`) REFERENCES `model` (`model_id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 71 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 91 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of cart_model
@@ -144,6 +153,22 @@ INSERT INTO `cart_model` VALUES (67, '2018-06-08 10:47:17', 20615.00, 456, 18, 2
 INSERT INTO `cart_model` VALUES (68, '2018-06-08 10:47:48', 3025.00, 455, 33, 30250.00);
 INSERT INTO `cart_model` VALUES (69, '2018-06-08 10:48:06', 2025.00, 455, 33, 20250.00);
 INSERT INTO `cart_model` VALUES (70, '2018-06-08 10:48:10', 2025.00, 455, 33, 20250.00);
+INSERT INTO `cart_model` VALUES (71, '2018-06-18 21:03:14', 3025.00, 457, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (72, '2018-06-19 10:02:09', 3025.00, 458, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (73, '2018-06-19 10:02:23', 3025.00, 458, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (74, '2018-06-19 10:02:29', 2025.00, 458, 33, 20250.00);
+INSERT INTO `cart_model` VALUES (75, '2018-06-19 10:03:22', 1575.00, 458, 15, 31500.00);
+INSERT INTO `cart_model` VALUES (76, '2018-06-19 10:03:51', 3025.00, 462, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (77, '2018-06-19 10:04:29', 3025.00, 463, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (78, '2018-06-19 10:07:47', 2025.00, 464, 33, 20250.00);
+INSERT INTO `cart_model` VALUES (79, '2018-06-19 10:08:09', 6000.00, 464, 37, 108000.00);
+INSERT INTO `cart_model` VALUES (80, '2018-06-19 10:11:03', 3025.00, 462, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (85, '2018-06-20 07:55:07', 3025.00, 471, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (86, '2018-06-20 22:34:41', 3025.00, 472, 33, 30250.00);
+INSERT INTO `cart_model` VALUES (87, '2018-06-20 22:34:54', 2025.00, 472, 15, 40500.00);
+INSERT INTO `cart_model` VALUES (88, '2018-06-20 22:35:08', 18910.00, 472, 6, 264740.00);
+INSERT INTO `cart_model` VALUES (89, '2018-06-21 08:04:22', 2025.00, 475, 33, 20250.00);
+INSERT INTO `cart_model` VALUES (90, '2018-06-21 08:04:36', 2700.00, 475, 15, 54000.00);
 
 -- ----------------------------
 -- Table structure for category
@@ -165,8 +190,8 @@ CREATE TABLE `category`  (
 -- ----------------------------
 -- Records of category
 -- ----------------------------
-INSERT INTO `category` VALUES (1, 'PVC', '/assets/images/pvcCat1.png', 'PVC je skraćenica za polivinil-hlorid. PVC je jedna od najkorišćenijih vrsta plastike. PVC prozori imaju dobra toplotna svojstva, spojevi elemenata su vareni tako da PVC prozor čini praktično jednu celinu i on je kompaktan materijal u celom preseku.\r\n\r\nPVC stolarija u ogromnoj meri smanjuje nivo buke koji dolazi od spolja. PVC prozori koje koristimo mogu imati 5 i 6 komora u preseku. Komore znače dubinu samog PVC profila samim tim imaju bolju energetsku efikasnost.', 1);
-INSERT INTO `category` VALUES (2, 'ALU', '/assets/images/aluCat.jpg', 'Aluminijum ima veliku otpornost na atmosferske uticaje i iz tog razloga se praktikuje za prostore koji su izloženi sunčevoj svetlosti i visokim temperaturama. ALU prozori su ekološki jer je aluminijum material prirodnog porekla.\r\n\r\nAluminijumska stolarija je lakša od PVC-a pa se može koristiti za izradu večih površina za poslovne prostore, izloge i slično.\r\n\r\nDugotrajnost i pouzdanost ALU stolarije kao i veliki izbor boja u kombinaciji sa plastifikacijom ili eloksazom aluminijumske prozore stavlja na prvo mesto prilikom odabira za vaš stambeni ili poslovni objekat.', 2);
+INSERT INTO `category` VALUES (1, 'PVC', 'assets/images/pvcCat1.png', 'PVC je skraćenica za polivinil-hlorid. PVC je jedna od najkorišćenijih vrsta plastike. PVC prozori imaju dobra toplotna svojstva, spojevi elemenata su vareni tako da PVC prozor čini praktično jednu celinu i on je kompaktan materijal u celom preseku.\r\n\r\nPVC stolarija u ogromnoj meri smanjuje nivo buke koji dolazi od spolja. PVC prozori koje koristimo mogu imati 5 i 6 komora u preseku. Komore znače dubinu samog PVC profila samim tim imaju bolju energetsku efikasnost.', 1);
+INSERT INTO `category` VALUES (2, 'ALU', 'assets/images/aluCat.jpg', 'Aluminijum ima veliku otpornost na atmosferske uticaje i iz tog razloga se praktikuje za prostore koji su izloženi sunčevoj svetlosti i visokim temperaturama. ALU prozori su ekološki jer je aluminijum material prirodnog porekla.\r\n\r\nAluminijumska stolarija je lakša od PVC-a pa se može koristiti za izradu večih površina za poslovne prostore, izloge i slično.\r\n\r\nDugotrajnost i pouzdanost ALU stolarije kao i veliki izbor boja u kombinaciji sa plastifikacijom ili eloksazom aluminijumske prozore stavlja na prvo mesto prilikom odabira za vaš stambeni ili poslovni objekat.', 2);
 
 -- ----------------------------
 -- Table structure for manufacturer
@@ -213,7 +238,7 @@ CREATE TABLE `model`  (
   INDEX `fk_model_profile_id`(`profile_id`) USING BTREE,
   CONSTRAINT `fk_model_administrator_id` FOREIGN KEY (`administrator_id`) REFERENCES `administrator` (`administrator_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_model_profile_id` FOREIGN KEY (`profile_id`) REFERENCES `profile` (`profile_id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 64 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 63 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of model
@@ -258,7 +283,6 @@ INSERT INTO `model` VALUES (56, 'MR ECO KLIZNI PROZOR ARCADE', 45.00, 90.00, 45.
 INSERT INTO `model` VALUES (57, 'MR PREMIUM KLIZNI PROZOR EFORTE', 45.00, 90.00, 45.00, 90.00, 2, 'assets/images/models/profilm9050klizni_slika_57.jpg', 12);
 INSERT INTO `model` VALUES (59, 'MR PREMIUM BALKONSKA KLIZNA VRATA EFORTE', 150.00, 345.00, 160.00, 280.00, 3, 'assets/images/models/profilm9050klizni_slika_59.jpg', 12);
 INSERT INTO `model` VALUES (62, 'MR ECLUSIVE KLIZNA VRATA PRESTIGE ', 150.00, 345.00, 160.00, 280.00, 1, 'assets/images/models/profilm9050klizni_slika_62.jpg', 12);
-INSERT INTO `model` VALUES (63, 'pera', 123.00, 123.00, 123.00, 123.00, 3, '', 1);
 
 -- ----------------------------
 -- Table structure for model_view
@@ -274,7 +298,7 @@ CREATE TABLE `model_view`  (
   INDEX `fk_model_view_model_id`(`model_id`) USING BTREE,
   INDEX `model_view_ip_address_idx`(`ip_address`) USING BTREE,
   CONSTRAINT `fk_model_view_model_id` FOREIGN KEY (`model_id`) REFERENCES `model` (`model_id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 333 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 365 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of model_view
@@ -340,30 +364,32 @@ INSERT INTO `model_view` VALUES (312, '2018-06-05 21:57:21', 35, '::1', 'Mozilla
 INSERT INTO `model_view` VALUES (313, '2018-06-06 08:11:46', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
 INSERT INTO `model_view` VALUES (314, '2018-06-06 10:16:19', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
 INSERT INTO `model_view` VALUES (315, '2018-06-06 10:33:55', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
-INSERT INTO `model_view` VALUES (316, '2018-06-06 11:09:17', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
-INSERT INTO `model_view` VALUES (317, '2018-06-06 21:48:37', 15, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
-INSERT INTO `model_view` VALUES (318, '2018-06-06 21:59:30', 40, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
-INSERT INTO `model_view` VALUES (319, '2018-06-06 22:43:37', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
-INSERT INTO `model_view` VALUES (320, '2018-06-07 09:28:21', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
-INSERT INTO `model_view` VALUES (321, '2018-06-07 09:36:57', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
-INSERT INTO `model_view` VALUES (322, '2018-06-08 10:44:53', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36');
-INSERT INTO `model_view` VALUES (323, '2018-06-08 10:45:23', 37, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
-INSERT INTO `model_view` VALUES (324, '2018-06-08 10:45:44', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
-INSERT INTO `model_view` VALUES (325, '2018-06-08 10:46:05', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
-INSERT INTO `model_view` VALUES (326, '2018-06-08 10:46:55', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36');
-INSERT INTO `model_view` VALUES (327, '2018-06-08 10:47:09', 18, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36');
-INSERT INTO `model_view` VALUES (328, '2018-06-08 10:47:44', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36');
-INSERT INTO `model_view` VALUES (329, '2018-06-08 10:48:01', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36');
-INSERT INTO `model_view` VALUES (330, '2018-06-09 18:01:24', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
-INSERT INTO `model_view` VALUES (331, '2018-06-17 18:08:40', 36, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
-INSERT INTO `model_view` VALUES (332, '2018-06-17 18:13:06', 44, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0');
+INSERT INTO `model_view` VALUES (346, '2018-06-19 23:20:28', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (347, '2018-06-19 23:34:01', 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (348, '2018-06-19 23:40:45', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (349, '2018-06-19 23:45:24', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (350, '2018-06-19 23:54:33', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (351, '2018-06-19 23:55:26', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (352, '2018-06-19 23:56:45', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (353, '2018-06-20 07:55:02', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (354, '2018-06-20 08:36:49', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (355, '2018-06-20 08:37:05', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (356, '2018-06-20 08:37:06', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (357, '2018-06-20 08:37:08', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (358, '2018-06-20 08:37:13', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (359, '2018-06-20 22:34:36', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (360, '2018-06-20 22:34:48', 15, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (361, '2018-06-20 22:35:02', 6, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (362, '2018-06-21 08:04:17', 33, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (363, '2018-06-21 08:04:30', 15, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
+INSERT INTO `model_view` VALUES (364, '2018-06-21 11:15:25', 62, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134');
 
 -- ----------------------------
 -- Table structure for order_cart
 -- ----------------------------
 DROP TABLE IF EXISTS `order_cart`;
 CREATE TABLE `order_cart`  (
-  `order_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `order_cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `forename` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `surname` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `residential_address` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
@@ -371,16 +397,19 @@ CREATE TABLE `order_cart`  (
   `created_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `cart_id` int(11) UNSIGNED NOT NULL,
   `state` enum('u obradi','odbijena','odobrena') CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT 'u obradi',
-  PRIMARY KEY (`order_id`) USING BTREE,
+  PRIMARY KEY (`order_cart_id`) USING BTREE,
   UNIQUE INDEX `uq_order_cart_id`(`cart_id`) USING BTREE,
   INDEX `fk_order_cart_id`(`cart_id`) USING BTREE,
   CONSTRAINT `fk_order_cart_id` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of order_cart
 -- ----------------------------
-INSERT INTO `order_cart` VALUES (5, 'Marko', 'Miseljic', 'Beograd Brace Jerkovic 54', 'marko.miseljic.14@gmail.com', '2018-06-04 15:22:16', 431, 'u obradi');
+INSERT INTO `order_cart` VALUES (5, 'Marko', 'Miseljic', 'Beograd Brace Jerkovic 54', 'marko.miseljic.14@gmail.com', '2018-06-04 15:22:16', 431, 'odbijena');
+INSERT INTO `order_cart` VALUES (6, 'Marko', 'Miseljic', 'dryry', 'misko309@gmail.com', '2018-06-20 07:57:15', 471, 'u obradi');
+INSERT INTO `order_cart` VALUES (10, 'Marko', 'Miseljic', '21edasd', 'misko309@gmail.com', '2018-06-20 22:35:20', 472, 'odobrena');
+INSERT INTO `order_cart` VALUES (35, 'Marko', 'Miseljic', 'dryry', 'marko.miseljic.14@gmail.com', '2018-06-21 08:15:40', 475, 'odbijena');
 
 -- ----------------------------
 -- Table structure for profile

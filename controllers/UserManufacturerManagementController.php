@@ -40,6 +40,21 @@
 
         }
 
+        public function deleteById(){
+            $manufacturerModel = new \App\models\ManufacturerModel($this->getDatabaseConnection());
+            $manufacturer = $manufacturerModel->getAll();
+            $this->set('manufacturers',$manufacturer);
+
+        }
+
+        public function postDeleteById(){
+            
+            $manufacturer1 = \filter_input(INPUT_POST,'manufacturer_id', FILTER_SANITIZE_NUMBER_INT);
+            $manufacturerModel = new \App\models\ManufacturerModel($this->getDatabaseConnection());
+            $manufacturer = $manufacturerModel->deleteById($manufacturer1);
+            $this->redirect(\Configuration::BASE . 'user/manufacturers');
+        }
+
         public function postAdd() {
             $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
             

@@ -1,0 +1,26 @@
+{% extends "_global/index.html" %} {% block main %} {% spaceless %}
+<div class="container">
+    <div class="row">
+<a href="{{BASE}}user/profile" class="col-4 col-sm-4 col-md-4 text-center dash">Nazad na Dashboard</a>
+<a href="{{ BASE }}user/categories" class="col-8 col-sm-8 col-md-8 text-center dash">Prikazi sve kategorije</a>
+</div>
+    <h2 class="text-center">Brisanje Kategorije:</h2>
+<form class="delete-form" method="post">
+    <div class="form-group">
+        <label for="category_id">Kategorija: </label>
+        <select class="form-control" name="category_id" id="category_id">
+                {% for category in categories %}
+                <option value="{{ category.category_id }}">
+                    {{ category.name }}
+                </option>
+                {% endfor %}
+            </select>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-danger">
+            Obrisi kategoriju
+        </button>
+    </div>
+</form>
+</div>
+{% endspaceless %} {% endblock %}

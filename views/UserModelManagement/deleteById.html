@@ -1,0 +1,26 @@
+{% extends "_global/index.html" %} {% block main %} {% spaceless %}
+<div class="container">
+    <div class="row">
+<a href="{{BASE}}user/profile" class="col-4 col-sm-4 col-md-4 text-center dash">Nazad na Dashboard</a>
+<a href="{{ BASE }}user/models" class="col-8 col-sm-8 col-md-8 text-center dash">Prikazi sve modele</a>
+</div>
+<h2 class="text-center">Brisanje Modela:</h2>
+<form class="delete-form" method="post">
+    <div class="form-group">
+        <label for="model_id">Model: </label>
+        <select class="form-control" name="model_id" id="model_id">
+                {% for model in models %}
+                <option value="{{ model.model_id }}">
+                    {{ model.name }}
+                </option>
+                {% endfor %}
+            </select>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-danger">
+            Obrisi model
+        </button>
+    </div>
+</form>
+</div>
+{% endspaceless %} {% endblock %}

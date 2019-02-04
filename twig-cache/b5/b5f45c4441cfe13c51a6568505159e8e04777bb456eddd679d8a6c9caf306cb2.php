@@ -31,22 +31,22 @@ class __TwigTemplate_e7409aa749a64573bde28f0480cd63fece87a59d1bdb4ef85c2d76141c5
     public function block_main($context, array $blocks = array())
     {
         // line 2
-        echo "<div>
-    <div class=\"options\">
+        echo "<div class=\"container\">
+    <div class=\"row\">
         <a href=\"";
         // line 4
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/profile\">Dashboard</a>
+        echo "user/profile\" class=\"col-4 col-sm-4 col-md-4 text-center dash\">Nazad na Dashboard</a>
         <a href=\"";
         // line 5
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/categories\">Prikazi sve kategorije</a>
+        echo "user/categories\" class=\"col-8 col-sm-8 col-md-8 text-center dash\">Prikazi sve kategorije</a>
     </div>
-
+    <h2 class=\"text-center\">Dodavanje kategorije:</h2>
     <form class=\"category-form\" method=\"POST\" enctype=\"multipart/form-data\">
         <div class=\"form-group\">
             <label for=\"name\">Naziv: </label>
-            <input type=\"text\" id=\"name\" name=\"name\" required>
+            <input type=\"text\" id=\"name\" name=\"name\" required class=\"form-control\" pattern=\".*[^\\s]{3,}.*\">
         </div>
         <div class=\"form-group\">
             <label for=\"picture\">Slika: </label>
@@ -54,11 +54,11 @@ class __TwigTemplate_e7409aa749a64573bde28f0480cd63fece87a59d1bdb4ef85c2d76141c5
         </div>
         <div class=\"form-group\">
             <label for=\"description\">Opis: </label>
-            <textarea type=\"text\" id=\"description\" name=\"description\" required rows=\"10\"></textarea>
+            <textarea type=\"text\" id=\"description\" name=\"description\" required rows=\"10\" class=\"form-control\" pattern=\".*[^\\s]{3,}.*\"></textarea>
         </div>
 
-        <div class=\"form-control\">
-            <button type=\"submit\">
+        <div class=\"form-group\">
+            <button type=\"submit\" class=\"btn btn-primary\">
                 Dodaj kategoriju
             </button>
         </div>

@@ -157,7 +157,7 @@
         }
         final public function selectTableInnerJoin($fieldValue){
             $tableName= $this->getTableName();
-            $sql = 'SELECT cart_model.price_for_model, cart_model.cart_model_id, model.name, cart_model.area FROM cart_model 
+            $sql = 'SELECT cart_model.price_for_model, cart_model.model_id, cart_model.cart_model_id, model.name, cart_model.area FROM cart_model 
                     INNER JOIN model ON cart_model.model_id=model.model_id WHERE cart_id 
                     IN (SELECT cart_id FROM cart WHERE session_number = ?);';
             $prep = $this->dbc->getDatabaseConnection()->prepare($sql);
@@ -165,6 +165,62 @@
             $item = [];
             if($res){
                 $item = $prep->fetchAll(\PDO::FETCH_ASSOC);
+            }
+            return $item;
+        }
+        final public function stateUObradi(){
+            $sql = 'SELECT * FROM order_cart WHERE state = "u obradi";';
+            $prep = $this->dbc->getDatabaseConnection()->prepare($sql);
+            $res = $prep->execute();
+            $item =[];
+            if($res){
+                $item = $prep->fetchAll(\PDO::FETCH_ASSOC);
+            }
+            return $item;
+        }
+
+        final public function selectAllFromOrder($orderId){
+            $sql = 'SELECT * FROM order_cart WHERE order_cart_id = ?;';
+            $prep = $this->dbc->getDatabaseConnection()->prepare($sql);
+            $res = $prep->execute([$orderId]);
+            $item =[];
+            if($res){
+                $item = $prep->fetchAll(\PDO::FETCH_ASSOC);
+            }
+            return $item;
+        }
+        #UPDATE order_cart SET state = 'odbijena' where `order_cart_id` = 5 
+
+        final public function updateState($vrednost,$orderCartId){
+            $sql = 'UPDATE order_cart SET state = ? where `order_cart_id` = ?;';
+            $prep = $this->dbc->getDatabaseConnection()->prepare($sql);
+            $res = $prep->execute([$vrednost,$orderCartId]);
+        }
+
+        final public function modelNamePriceForModel($cartId){
+            $sql = 'SELECT model.name, cart_model.price_for_model FROM ((cart_model
+            INNER JOIN model ON cart_model.model_id=model.model_id)
+            INNER JOIN cart ON cart_model.cart_id=cart.cart_id ) 
+            WHERE cart.cart_id IN ( SELECT cart_id FROM order_cart WHERE order_cart.cart_id = ?);';
+            $prep = $this->dbc->getDatabaseConnection()->prepare($sql);
+            $res = $prep->execute([$cartId]);
+            $item =[];
+            if($res){
+                $item = $prep->fetchAll(\PDO::FETCH_ASSOC);
+            }
+            return $item;
+        }
+
+        final public function suma($fieldValue){
+            $tableName= $this->getTableName();
+            $sql = 'SELECT SUM(price_for_model) AS suma FROM cart_model 
+                    INNER JOIN model ON cart_model.model_id=model.model_id WHERE cart_id 
+                    IN (SELECT cart_id FROM cart WHERE session_number = ?);';
+            $prep = $this->dbc->getDatabaseConnection()->prepare($sql);
+            $res = $prep->execute([$fieldValue]);
+            $item = NULL;
+            if($res){
+                $item = $prep->fetch(\PDO::FETCH_ASSOC);
             }
             return $item;
         }

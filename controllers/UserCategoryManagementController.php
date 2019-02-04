@@ -49,7 +49,20 @@
 
         }
 
-        public function deleteById(){}
+        public function deleteById(){
+            $categoryModel = new \App\models\CategoryModel($this->getDatabaseConnection());
+            $category = $categoryModel->getAll();
+            $this->set('categories',$category);
+
+        }
+
+        public function postDeleteById(){
+            
+            $category1 = \filter_input(INPUT_POST,'category_id', FILTER_SANITIZE_NUMBER_INT);
+            $categoryModel = new \App\models\CategoryModel($this->getDatabaseConnection());
+            $category = $categoryModel->deleteById($category1);
+            $this->redirect(\Configuration::BASE . 'user/categories');
+        }
 
         public function postAdd() {
             $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);

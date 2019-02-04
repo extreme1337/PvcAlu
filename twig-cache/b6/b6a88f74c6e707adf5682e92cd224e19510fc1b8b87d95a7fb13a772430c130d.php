@@ -46,16 +46,20 @@ class __TwigTemplate_048917646d7773ec220bf39ea30bbb297c73f72b5144b46c640704a2a3d
         <a href=\"";
         // line 6
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/profiles\"class=\"col-12 col-sm-6 col-md-6 text-center dash\">Uredjivanje profila</a>
+        echo "user/profiles\" class=\"col-12 col-sm-6 col-md-6 text-center dash\">Uredjivanje profila</a>
         <a href=\"";
         // line 7
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/models\" class=\"col-12 col-sm-6 col-md-6 text-center dash\">Uredjivanje modela</a>       
+        echo "user/models\" class=\"col-12 col-sm-6 col-md-6 text-center dash\">Uredjivanje modela</a>
+        <a href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/orders\" class=\"col-12 col-sm-6 col-md-6 text-center dash\">Upravljanje porudzbinama</a>
     </div>
 </div>
 ";
         echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
-        // line 10
+        // line 11
         echo " ";
     }
 
@@ -71,7 +75,7 @@ class __TwigTemplate_048917646d7773ec220bf39ea30bbb297c73f72b5144b46c640704a2a3d
 
     public function getDebugInfo()
     {
-        return array (  59 => 10,  52 => 7,  48 => 6,  44 => 5,  40 => 4,  36 => 2,  15 => 1,);
+        return array (  63 => 11,  56 => 8,  52 => 7,  48 => 6,  44 => 5,  40 => 4,  36 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

@@ -31,45 +31,49 @@ class __TwigTemplate_fff1d18b3550e4bb1254f01d2278489a5842a4465a1f67234d36a171e0d
     public function block_main($context, array $blocks = array())
     {
         // line 2
-        echo "<div>
-    <div class=\"options\">
+        echo "<div class=\"container\">
+    <div class=\"row\">
         <a href=\"";
         // line 4
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/profile\">Dashboard</a>
+        echo "user/profile\" class=\"col-4 col-sm-4 col-md-4 text-center dash\">Nazad na Dashboard</a>
         <a href=\"";
         // line 5
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "user/manufacturers/add\">Dodaj novog proizvodjaca
-        </a>
+        echo "user/manufacturers/add\" class=\"col-4 col-sm-4 col-md-4 text-center dash\">Dodaj novog proizvodjaca</a>
+        <a href=\"";
+        // line 6
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/manufacturers/delete\" class=\"col-4 col-sm-4 col-md-4 text-center dash\">Obrisi proizvodjaca</a>
     </div>
-
-    <div class=\"manufacturers\">
-        <ul>
+    <h2 class=\"text-center\">Proizvodjaci:</h2>
+    <div class=\"row\">
+       
             ";
         // line 11
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["manufacturers"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["manufacturer"]) {
             // line 12
-            echo "            <li>
+            echo "           
                 <a href=\"";
             // line 13
             echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
             echo "user/manufacturers/edit/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["manufacturer"], "manufacturer_id", array()), "html", null, true);
-            echo "\">
+            echo "\" class=\"col-12 col-sm-4 col-md-4 text-center dash\">
                     ";
             // line 14
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["manufacturer"], "name", array()));
             echo "
-                </a> ";
+                </a>
+               ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['manufacturer'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 16
-        echo "        </ul>
+        // line 17
+        echo "        
     </div>
 </div>
 ";
@@ -87,7 +91,7 @@ class __TwigTemplate_fff1d18b3550e4bb1254f01d2278489a5842a4465a1f67234d36a171e0d
 
     public function getDebugInfo()
     {
-        return array (  72 => 16,  64 => 14,  58 => 13,  55 => 12,  51 => 11,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
+        return array (  76 => 17,  67 => 14,  61 => 13,  58 => 12,  54 => 11,  46 => 6,  42 => 5,  38 => 4,  34 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

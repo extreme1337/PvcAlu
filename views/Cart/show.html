@@ -26,7 +26,9 @@
                         <p>Cena po povrsini: {{model.price_for_model}} RSD </p>
                     </td>
                     <td>
-                        <button type="button" value="{{cartModel.cart_model_id}}" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                        <form action="{{BASE}}cart/" method="POST">
+                            <button type="submit" for="cart_model_id" name="cart_model_id" id="cart_model_id" value="{{model.cart_model_id}}" class="cart_model_id btn btn-danger"><i class="fa fa-trash"></i></button>
+                        </form>
                     </td>
                     {% endfor %}
 

@@ -1,0 +1,30 @@
+{% extends "_global/index.html" %} {% block main %} {% spaceless %}
+<div class="container">
+    <div class="row">
+        <a href="{{BASE}}user/profile" class="col-12 text-center dash">Nazad na Dashboard</a>
+    </div>
+    <form method="post">
+
+
+        <div class="card-body">
+            <div class="form-group">
+                <label for="order_cart_id">Porudzbine: </label>
+                <select class="form-control" name="order_cart_id" id="order_cart_id">
+                    {% for order1 in orders %}
+                    <option value="{{ order1.order_cart_id }}">
+                        {{ order1.order_cart_id }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">
+                        Odobri / Odbij porudzbinu
+                    </button>
+            </div>
+        </div>
+    </form>
+
+</div>
+{% endspaceless %} {% endblock %}

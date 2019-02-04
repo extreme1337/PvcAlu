@@ -91,6 +91,20 @@
 
             $this->set('message', 'Doslo je do greske: Nije moguce dodati ovog proizvodjaca!');
         }
+        public function deleteById(){
+            $modelModel = new \App\models\ModelModel($this->getDatabaseConnection());
+            $model = $modelModel->getAll();
+            $this->set('models',$model);
+
+        }
+
+        public function postDeleteById(){
+            
+            $model1 = \filter_input(INPUT_POST,'model_id', FILTER_SANITIZE_NUMBER_INT);
+            $modelModel = new \App\models\ModelModel($this->getDatabaseConnection());
+            $model = $modelModel->deleteById($model1);
+            $this->redirect(\Configuration::BASE . 'user/models');
+        }
 
         private function doImageUpload(string $fieldName, string $fileName) : bool{
             unlink(\Configuration::UPLOAD_DIR.$fileName.'.jpg');

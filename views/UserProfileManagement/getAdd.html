@@ -1,48 +1,48 @@
 {% extends "_global/index.html" %} {% block main %}
-<div>
-    <div class="options">
-        <a href="{{BASE}}user/profile">Dashboard</a>
-        <a href="{{ BASE }}user/profiles">Prikazi sve profile</a>
-    </div>
-
-    <form class="profile-form" method="POST" enctype="multipart/form-data">
-        <div>
-            <label for="name">Naziv: </label>
-            <input type="text" id="name" name="name" required>
+<div class="container">
+        <div class="row">
+            <a href="{{BASE}}user/profile" class="col-4 col-sm-4 col-md-4 text-center dash">Nazad na Dashboard</a>
+            <a href="{{ BASE }}user/profiles" class="col-8 col-sm-8 col-md-8 text-center dash">Prikazi sve profile</a>
         </div>
-        <div class="form-group">
-            <label for="picture">Slika: </label>
-            <input type="file" id="picture" class="form-control" name="picture" accept="image/jpeg">
-        </div>
-        <div>
-            <label for="price_per_unit_area">Cena po povrsini: </label>
-            <input type="text" id="price_per_unit_area" name="price_per_unit_area" required>
-        </div>
-        <div class="form-group">
-            <label for="category_id">Profil</label>
-            <select class="form-control" name="category_id" id="category_id">
-                    {% for category in categories %}
-                    <option value="{{ category.category_id }}">
-                        {{ category.name }}
-                    </option>
-                    {% endfor %}
-                </select>
-        </div>
-        <div class="form-group">
-            <label for="manufacturer_id">Proizvodjac: </label>
-            <select class="form-control" name="manufacturer_id" id="manufacturer_id">
-                        {% for manufacturer in manufacturers %}
-                        <option value="{{ manufacturer.manufacturer_id }}">
-                            {{ manufacturer.name }}
+        <h2 class="text-center">Dodavanje profila:</h2>
+        <form class="profile-form" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="name">Naziv: </label>
+                <input type="text" id="name" name="name" required class="form-control" pattern=".*[^\s]{3,}.*">
+            </div>
+            <div class="form-group">
+                <label for="picture">Slika: </label>
+                <input type="file" id="picture" class="form-control" name="picture" accept="image/jpeg">
+            </div>
+            <div>
+                <label for="price_per_unit_area">Cena po povrsini: </label>
+                <input type="text" min="1" id="price_per_unit_area" name="price_per_unit_area" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="category_id">Profil</label>
+                <select class="form-control" name="category_id" id="category_id">
+                        {% for category in categories %}
+                        <option value="{{ category.category_id }}">
+                            {{ category.name }}
                         </option>
                         {% endfor %}
                     </select>
-        </div>
-        <div>
-            <button type="submit">
-                Dodaj profil
-            </button>
-        </div>
-    </form>
-</div>
+            </div>
+            <div class="form-group">
+                <label for="manufacturer_id">Proizvodjac: </label>
+                <select class="form-control" name="manufacturer_id" id="manufacturer_id">
+                            {% for manufacturer in manufacturers %}
+                            <option value="{{ manufacturer.manufacturer_id }}">
+                                {{ manufacturer.name }}
+                            </option>
+                            {% endfor %}
+                        </select>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">
+                    Dodaj profil
+                </button>
+            </div>
+        </form>
+    </div>
 {% endblock %}

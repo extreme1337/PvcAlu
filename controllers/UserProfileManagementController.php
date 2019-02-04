@@ -99,6 +99,21 @@
             $this->set('message', 'Doslo je do greske: Nije moguce dodati ovu kategoriju!');
         }
 
+        public function deleteById(){
+            $profileModel = new \App\models\ProfileModel($this->getDatabaseConnection());
+            $profile = $profileModel->getAll();
+            $this->set('profiles',$profile);
+
+        }
+
+        public function postDeleteById(){
+            
+            $profile1 = \filter_input(INPUT_POST,'profile_id', FILTER_SANITIZE_NUMBER_INT);
+            $profileModel = new \App\models\ProfileModel($this->getDatabaseConnection());
+            $profile = $profileModel->deleteById($profile1);
+            $this->redirect(\Configuration::BASE . 'user/profiles');
+        }
+
         private function doImageUpload(string $fieldName, string $fileName) : bool{
             unlink(\Configuration::UPLOAD_DIR.$fileName.'.jpg');
             $uploadPath = new \Upload\Storage\FileSystem(\Configuration::UPLOAD_DIR);
